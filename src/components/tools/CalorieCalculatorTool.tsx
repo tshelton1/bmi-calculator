@@ -1,0 +1,170 @@
+// src/components/tools/CalorieCalculatorTool.tsx
+"use client";
+
+import { useState, useMemo } from "react";
+import NumberField from "@/components/NumberField";
+import SexToggle from "@/components/SexToggle";
+import ActivitySelect from "@/components/ActivitySelect";
+import ResetMetricsLink from "@/components/ResetMetricsLink";
+import ExampleMealsSection from "@/components/ExampleMealsSection";
+import { useUserMetrics } from "@/hooks/useUserMetrics";
+import {
+  calculateBMR,
+  calculateTDEE,
+  calculateMacros,
+  type ActivityLevel,
+} from "@/lib/calculations";
+
+export default function CalorieCalculatorTool() {
+  const {
+    feet,
+    inches,
+    weight,
+    age,
+    sex,
+    poundsToLose,
+    setFeet,
+    setInches,
+    setWeight,
+    setAge,
+    setSex,
+    setPoundsToLose,
+  } = useUserMetrics();
+  const [activity, setActivity] = useState<ActivityLevel>("moderate");
+
+  const heightInches = (parseFloat(feet) || 0) * 12 + (parseFloat(inches) || 0);
+  const weightLbs = parseFloat(weight) || 0;
+  const ageYears = parseFloat(age) || 0;
+  const poundsGoal = parseFloat(poundsToLose) || 0;
+  const hasInput = heightInches > 0 && weightLbs > 0 && ageYears > 0;
+
+  const bmr = useMemo(
+    () => calculateBMR(weightLbs, heightInches, ageYears, sex),
+    [weightLbs, heightInches, ageYears, sex]
+  );
+  const tdee = useMemo(() => calculateTDEE(bmr, activity), [bmr, activity]);
+  const macros = useMemo(
+    () => calculateMacros(weightLbs, tdee, "cutting"),
+    [weightLbs, tdee]
+  );
+
+  const estimatedWeeks =
+    poundsGoal > 0 ? Math.round(poundsGoal) : null;
+
+  return (
+    <div className="border border-ink/20 bg-paper">
+      <div className="grid sm:grid-cols-2 gap-4 p-5 border-b border-ink/15">
+        <div className="grid grid-cols-2 gap-4">
+          <NumberField id="cal-feet" label="Height — ft" value={feet} onChange={setFeet} unit="ft" />
+          <NumberField id="cal-inches" label="Height — in" value={inches} onChange={setInches} unit="in" />
+        </div>
+        <NumberField id="cal-weight" label="Weight" value={weight} onChange={setWeight} unit="lb" />
+        <NumberField id="cal-age" label="Age" value={age} onChange={setAge} unit="yrs" />
+        <SexToggle value={sex} onChange={setSex} />
+        <div className="sm:col-span-2">
+          <ActivitySelect value={activity} onChange={setActivity} />
+        </div>
+        <div className="sm:col-span-2">
+          <ResetMetricsLink />
+        </div>
+      </div>
+
+      <div className="p-5">
+        {hasInput ? (
+          <>
+            <div className="flex items-end gap-3 mb-4">
+              <span className="text-5xl font-mono font-semibold text-ink leading-none">
+                {tdee.toLocaleString()}
+              </span>
+              <span className="text-sage text-sm font-mono pb-1.5">
+                calories / day to maintain weight
+              </span>
+            </div>
+            <div className="grid grid-cols-2 gap-px bg-line border border-line text-sm mb-6">
+              <div className="bg-paper p-3">
+                <p className="text-xs text-sage font-mono uppercase mb-1">To lose ~1lb/week</p>
+                <p className="font-mono font-semibold text-ink">
+                  {(tdee - 500).toLocaleString()} cal
+                </p>
+              </div>
+              <div className="bg-paper p-3">
+                <p className="text-xs text-sage font-mono uppercase mb-1">To gain ~1lb/week</p>
+                <p className="font-mono font-semibold text-ink">
+                  {(tdee + 500).toLocaleString()} cal
+                </p>
+              </div>
+            </div>
+
+            <NumberField
+              id="cal-pounds-to-lose"
+              label="How many pounds do you want to lose?"
+              value={poundsToLose}
+              onChange={setPoundsToLose}
+              unit="lb"
+            />
+
+            {estimatedWeeks !== null && (
+              <div className="mt-4 space-y-3">
+                <p className="text-sm text-ink font-mono">
+                  At a moderate pace, this would take roughly {estimatedWeeks}{" "}
+                  {estimatedWeeks === 1 ? "week" : "weeks"}.
+                </p>
+                <p className="text-xs text-sage font-mono leading-relaxed">
+                  This is a rough estimate based on a general 500-calorie deficit.
+                  Actual results vary by individual — faster weight loss goals require
+                  larger deficits, which carry more risk of muscle loss and are not
+                  recommended without guidance from a healthcare provider.
+                </p>
+              </div>
+            )}
+
+            <div className="mt-6">
+              <p className="text-xs text-sage font-mono uppercase mb-2">
+                Macro targets at moderate deficit
+              </p>
+              <div className="grid grid-cols-3 gap-px bg-line border border-line text-sm">
+                <div className="bg-paper p-3">
+                  <p className="text-xs text-sage font-mono uppercase mb-1">Protein</p>
+                  <p className="font-mono font-semibold text-ink">
+                    {macros.proteinG}g
+                  </p>
+                </div>
+                <div className="bg-paper p-3">
+                  <p className="text-xs text-sage font-mono uppercase mb-1">Fat</p>
+                  <p className="font-mono font-semibold text-ink">
+                    {macros.fatG}g
+                  </p>
+                </div>
+                <div className="bg-paper p-3">
+                  <p className="text-xs text-sage font-mono uppercase mb-1">Carbs</p>
+                  <p className="font-mono font-semibold text-ink">
+                    {macros.carbsG}g
+                  </p>
+                </div>
+              </div>
+              <p className="text-xs text-sage font-mono mt-2">
+                Based on {macros.calories.toLocaleString()} cal/day (TDEE − 500)
+              </p>
+            </div>
+          </>
+        ) : (
+          <p className="text-sage text-sm font-mono">
+            Enter your stats and activity level to see daily calorie needs.
+          </p>
+        )}
+      </div>
+
+      {hasInput && (
+        <div className="border-t border-ink/15 p-5">
+          <ExampleMealsSection />
+        </div>
+      )}
+
+      <div className="border-t border-ink/15 p-5 text-xs text-sage font-mono leading-relaxed">
+        This is your Total Daily Energy Expenditure (TDEE) — BMR adjusted for
+        activity level. The +/- 500 calorie estimates target roughly one
+        pound of change per week; individual results vary.
+      </div>
+    </div>
+  );
+}

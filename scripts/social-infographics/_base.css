@@ -1,0 +1,231 @@
+/**
+ * Living Healthier Pinterest infographic base styles.
+ * Adapted from MortgageIQ/scripts/social-infographics/_base.css
+ *
+ * Palette: ink #1A2E22 · paper #F7F5EF · clay #E8633C · sage #41564F · line #D9D4C7
+ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #1A2E22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.canvas {
+  width: 1000px;
+  height: 1500px;
+  background: linear-gradient(180deg, #1A2E22 0%, #152820 55%, #0f1f18 100%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #F7F5EF;
+  padding: 44px 48px 36px;
+}
+
+.site-url {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(232, 99, 60, 0.9);
+  margin-bottom: 28px;
+}
+
+h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 52px;
+  line-height: 1.08;
+  font-weight: 700;
+  max-width: 900px;
+}
+
+.subtitle {
+  margin-top: 14px;
+  font-size: 20px;
+  color: #E8633C;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.context {
+  margin-top: 10px;
+  font-size: 16px;
+  color: rgba(247, 245, 239, 0.62);
+  line-height: 1.5;
+}
+
+.rule-box {
+  margin-top: 28px;
+  background: rgba(247, 245, 239, 0.06);
+  border: 1px solid rgba(232, 99, 60, 0.35);
+  border-radius: 16px;
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.rule-box .label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(232, 99, 60, 0.85);
+}
+
+.rule-box .formula {
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #F7F5EF;
+  line-height: 1.4;
+}
+
+.body {
+  flex: 1;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.item {
+  display: flex;
+  gap: 18px;
+  background: rgba(247, 245, 239, 0.05);
+  border: 1px solid rgba(247, 245, 239, 0.08);
+  border-radius: 14px;
+  padding: 18px 20px;
+  border-left: 4px solid #E8633C;
+}
+
+.item .num {
+  font-size: 28px;
+  font-weight: 800;
+  color: #E8633C;
+  line-height: 1;
+  min-width: 44px;
+}
+
+.item h3 {
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.item p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(247, 245, 239, 0.78);
+}
+
+.item p strong {
+  color: rgba(232, 99, 60, 0.95);
+  font-weight: 700;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.compare-grid.three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.compare-card {
+  background: rgba(247, 245, 239, 0.05);
+  border: 1px solid rgba(247, 245, 239, 0.1);
+  border-radius: 16px;
+  padding: 20px 18px;
+  border-top: 4px solid #E8633C;
+}
+
+.compare-card.sage { border-top-color: #41564F; }
+
+.compare-card .tag {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(232, 99, 60, 0.9);
+  margin-bottom: 14px;
+}
+
+.compare-card.sage .tag { color: #D9D4C7; }
+
+.compare-card .metric {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(247, 245, 239, 0.08);
+  color: rgba(247, 245, 239, 0.72);
+}
+
+.compare-card .metric:last-child { border-bottom: none; }
+
+.compare-card .metric span:last-child {
+  font-weight: 800;
+  color: #F7F5EF;
+  text-align: right;
+}
+
+.highlight-box {
+  background: rgba(232, 99, 60, 0.12);
+  border: 1px solid rgba(232, 99, 60, 0.35);
+  border-radius: 16px;
+  padding: 22px 24px;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.highlight-box p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 26px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.highlight-box strong { color: #E8633C; }
+
+.footer {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.cta-box {
+  background: rgba(247, 245, 239, 0.06);
+  border: 1px solid rgba(232, 99, 60, 0.3);
+  border-radius: 14px;
+  padding: 18px 22px;
+  text-align: center;
+}
+
+.cta-box p {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.cta-box .sub {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(247, 245, 239, 0.6);
+}
+
+.hashtags {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 11px;
+  color: rgba(232, 99, 60, 0.75);
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
