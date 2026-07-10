@@ -8,10 +8,10 @@ type ActivitySelectProps = {
 
 export default function ActivitySelect({ value, onChange }: ActivitySelectProps) {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex flex-col">
       <label
         htmlFor="activity-level"
-        className="text-xs uppercase tracking-wide text-sage font-mono"
+        className="font-body text-xs font-medium tracking-wide uppercase text-ink-500 mb-2 block"
       >
         Activity level
       </label>
@@ -19,7 +19,7 @@ export default function ActivitySelect({ value, onChange }: ActivitySelectProps)
         id="activity-level"
         value={value}
         onChange={(e) => onChange(e.target.value as ActivityLevel)}
-        className="border border-ink/30 focus-within:border-clay bg-paper px-3 py-2.5 text-ink font-mono text-sm outline-none"
+        className="border-0 border-b border-ink-100 rounded-none bg-transparent px-0 py-2.5 text-ink-900 font-body text-sm focus:outline-none focus:border-gold-500 transition-colors duration-200"
       >
         {(Object.keys(ACTIVITY_LABELS) as ActivityLevel[]).map((level) => (
           <option key={level} value={level}>

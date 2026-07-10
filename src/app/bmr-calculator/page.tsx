@@ -1,6 +1,7 @@
 // src/app/bmr-calculator/page.tsx
 import type { Metadata } from "next";
 import BMRCalculatorTool from "@/components/tools/BMRCalculatorTool";
+import { Accordion } from "@/components/ui/Accordion";
 import { SITE_URL } from "@/lib/constants";
 import {
   calculatorOpenGraph,
@@ -40,39 +41,50 @@ export default function BMRCalculatorPage() {
 
       <BMRCalculatorTool />
 
-      <section className="mt-12 prose-sage">
-        <h2 className="text-xl font-semibold text-ink mb-3">
-          What BMR actually measures
-        </h2>
-        <p className="text-sage mb-4 leading-relaxed">
-          BMR represents the calories needed for involuntary processes:
-          breathing, circulation, cell production, and maintaining body
-          temperature. It assumes you&apos;re lying down, awake, and fully
-          at rest — it does not include digestion, walking around, or
-          exercise of any kind.
-        </p>
-        <h2 className="text-xl font-semibold text-ink mb-3 mt-8">
-          The Mifflin-St Jeor equation
-        </h2>
-        <p className="text-sage mb-4 leading-relaxed">
-          This calculator uses the Mifflin-St Jeor equation, which research
-          has generally found more accurate than the older Harris-Benedict
-          formula for most adults. It factors in weight, height, age, and
-          sex — sex matters here because of average differences in muscle
-          mass, which burns more energy at rest than fat tissue.
-        </p>
-        <h2 className="text-xl font-semibold text-ink mb-3 mt-8">
-          From BMR to daily needs
-        </h2>
-        <p className="text-sage leading-relaxed">
-          BMR is the floor, not the full picture. To find out how many
-          calories you actually burn in a normal day — including movement
-          and exercise — use the{" "}
-          <a href="/calorie-calculator" className="text-clay underline">
-            calorie needs calculator
-          </a>
-          , which adjusts your BMR for activity level.
-        </p>
+      <section>
+        <p className="eyebrow mt-16 mb-6">About this calculator</p>
+        <Accordion
+          defaultOpenIndex={0}
+          items={[
+            {
+              question: "What BMR actually measures",
+              answer: (
+                <p>
+                  BMR represents the calories needed for involuntary
+                  processes: breathing, circulation, cell production, and
+                  maintaining body temperature. It assumes you&apos;re lying
+                  down, awake, and fully at rest — it does not include
+                  digestion, walking around, or exercise of any kind.
+                </p>
+              ),
+            },
+            {
+              question: "The Mifflin-St Jeor equation",
+              answer: (
+                <p>
+                  This calculator uses the Mifflin-St Jeor equation, which
+                  research has generally found more accurate than the older
+                  Harris-Benedict formula for most adults. It factors in
+                  weight, height, age, and sex — sex matters here because of
+                  average differences in muscle mass, which burns more energy
+                  at rest than fat tissue.
+                </p>
+              ),
+            },
+            {
+              question: "From BMR to daily needs",
+              answer: (
+                <p>
+                  BMR is the floor, not the full picture. To find out how many
+                  calories you actually burn in a normal day — including
+                  movement and exercise — use the{" "}
+                  <a href="/calorie-calculator">calorie needs calculator</a>,
+                  which adjusts your BMR for activity level.
+                </p>
+              ),
+            },
+          ]}
+        />
       </section>
     </main>
   );

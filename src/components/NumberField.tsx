@@ -17,14 +17,14 @@ export default function NumberField({
   id,
 }: NumberFieldProps) {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex flex-col">
       <label
         htmlFor={id}
-        className="text-xs uppercase tracking-wide text-sage font-mono"
+        className="font-body text-xs font-medium tracking-wide uppercase text-ink-500 mb-2 block"
       >
         {label}
       </label>
-      <div className="flex items-stretch border border-ink/30 focus-within:border-clay transition-colors bg-paper">
+      <div className="flex items-baseline gap-2 border-b border-ink-100 focus-within:border-gold-500 transition-colors duration-200">
         <input
           id={id}
           type="number"
@@ -32,10 +32,10 @@ export default function NumberField({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full bg-transparent px-3 py-2.5 text-ink font-mono text-lg outline-none placeholder:text-sage/40"
+          className="w-full min-w-0 border-0 bg-transparent font-mono text-xl text-ink-900 pb-2 pt-1 focus:outline-none focus:ring-0 placeholder:text-ink-300"
         />
         {unit && (
-          <span className="flex items-center px-3 text-sm text-sage font-mono border-l border-ink/15 bg-ink/[0.03]">
+          <span className="font-mono text-sm text-ink-300 pb-2 shrink-0">
             {unit}
           </span>
         )}

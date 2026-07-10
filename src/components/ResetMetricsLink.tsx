@@ -13,7 +13,7 @@ export default function ResetMetricsLink({
     <button
       type="button"
       onClick={reset}
-      className={`text-xs text-sage font-mono hover:text-clay underline ${className}`}
+      className={`text-xs text-ink-300 font-mono hover:text-gold-600 underline ${className}`}
     >
       Reset my info
     </button>

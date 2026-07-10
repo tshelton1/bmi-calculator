@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import MacroCalculatorTool from "@/components/tools/MacroCalculatorTool";
 import AffiliateSlot from "@/components/AffiliateSlot";
+import { Accordion } from "@/components/ui/Accordion";
 import { SITE_URL } from "@/lib/constants";
 import {
   calculatorOpenGraph,
@@ -43,45 +44,54 @@ export default function MacroCalculatorPage() {
 
       <AffiliateSlot placement="macro-mid" />
 
-      <section className="mt-12 prose-sage">
-        <h2 className="text-xl font-semibold text-ink mb-3">
-          How the calculation works
-        </h2>
-        <p className="text-sage mb-4 leading-relaxed">
-          This calculator starts with your{" "}
-          <a href="/calorie-calculator" className="text-clay underline">
-            TDEE
-          </a>{" "}
-          — total daily energy expenditure — then adjusts calories up or down
-          based on your goal. Protein is set first as a grams-per-pound
-          target, fat as a percentage of total calories, and whatever
-          calories remain after protein and fat are allocated go to
-          carbohydrates.
-        </p>
-        <h2 className="text-xl font-semibold text-ink mb-3 mt-8">
-          Why protein is set first
-        </h2>
-        <p className="text-sage mb-4 leading-relaxed">
-          Protein supports muscle retention during a cut and recovery during
-          training. Setting it by body weight — rather than as a percentage
-          of calories — keeps the target stable even when total calories
-          change. Fat gets a fixed share of calories to support hormones
-          and satiety; carbs absorb the rest and flex with your energy needs.
-        </p>
-        <h2 className="text-xl font-semibold text-ink mb-3 mt-8">
-          Treat these as starting points
-        </h2>
-        <p className="text-sage leading-relaxed">
-          No formula nails macros for every person on the first try. Track
-          your intake against these targets for two to three weeks, then
-          adjust based on scale trend, gym performance, and how you feel.
-          Pair with your{" "}
-          <a href="/body-fat-calculator" className="text-clay underline">
-            body fat percentage
-          </a>{" "}
-          to see whether weight changes are coming from fat or lean mass —
-          that context matters more than hitting exact gram targets.
-        </p>
+      <section>
+        <p className="eyebrow mt-16 mb-6">About this calculator</p>
+        <Accordion
+          defaultOpenIndex={0}
+          items={[
+            {
+              question: "How the calculation works",
+              answer: (
+                <p>
+                  This calculator starts with your{" "}
+                  <a href="/calorie-calculator">TDEE</a> — total daily energy
+                  expenditure — then adjusts calories up or down based on your
+                  goal. Protein is set first as a grams-per-pound target, fat
+                  as a percentage of total calories, and whatever calories
+                  remain after protein and fat are allocated go to
+                  carbohydrates.
+                </p>
+              ),
+            },
+            {
+              question: "Why protein is set first",
+              answer: (
+                <p>
+                  Protein supports muscle retention during a cut and recovery
+                  during training. Setting it by body weight — rather than as
+                  a percentage of calories — keeps the target stable even when
+                  total calories change. Fat gets a fixed share of calories to
+                  support hormones and satiety; carbs absorb the rest and flex
+                  with your energy needs.
+                </p>
+              ),
+            },
+            {
+              question: "Treat these as starting points",
+              answer: (
+                <p>
+                  No formula nails macros for every person on the first try.
+                  Track your intake against these targets for two to three
+                  weeks, then adjust based on scale trend, gym performance, and
+                  how you feel. Pair with your{" "}
+                  <a href="/body-fat-calculator">body fat percentage</a> to see
+                  whether weight changes are coming from fat or lean mass —
+                  that context matters more than hitting exact gram targets.
+                </p>
+              ),
+            },
+          ]}
+        />
       </section>
     </main>
   );

@@ -35,8 +35,8 @@ export default function BMRCalculatorTool() {
 
   return (
     <>
-    <div className="border border-ink/20 bg-paper">
-      <div className="grid sm:grid-cols-2 gap-4 p-5 border-b border-ink/15">
+    <div className="bg-white shadow-luxury-md rounded-none border-t-2 border-gold-500">
+      <div className="grid sm:grid-cols-2 gap-4 p-5 md:p-8 border-b border-ivory-300">
         <div className="grid grid-cols-2 gap-4">
           <NumberField id="bmr-feet" label="Height — ft" value={feet} onChange={setFeet} unit="ft" />
           <NumberField id="bmr-inches" label="Height — in" value={inches} onChange={setInches} unit="in" />
@@ -49,24 +49,25 @@ export default function BMRCalculatorTool() {
         </div>
       </div>
 
-      <div className="p-5">
-        {hasInput ? (
-          <div className="flex items-end gap-3">
-            <span className="text-5xl font-mono font-semibold text-ink leading-none">
-              {bmr.toLocaleString()}
-            </span>
-            <span className="text-sage text-sm font-mono pb-1.5">
-              calories / day at rest
-            </span>
-          </div>
-        ) : (
-          <p className="text-sage text-sm font-mono">
+      {hasInput ? (
+        <div className="bg-forest-900 border-l-2 border-gold-500 p-8 md:p-10">
+          <p className="eyebrow text-forest-200 mb-2">Basal metabolic rate</p>
+          <span className="block font-mono text-6xl md:text-7xl font-light text-gold-400 tracking-display leading-none">
+            {bmr.toLocaleString()}
+          </span>
+          <p className="font-body text-sm text-forest-200 leading-relaxed mt-4">
+            calories / day at rest
+          </p>
+        </div>
+      ) : (
+        <div className="p-5 md:p-8">
+          <p className="text-ink-500 text-sm font-mono">
             Enter your stats to see your basal metabolic rate.
           </p>
-        )}
-      </div>
+        </div>
+      )}
 
-      <div className="border-t border-ink/15 p-5 text-xs text-sage font-mono leading-relaxed">
+      <div className="border-t border-ivory-300 p-5 text-xs text-ink-500 font-mono leading-relaxed">
         BMR is the energy your body needs at complete rest — breathing,
         circulation, cell repair. It does not include any movement or
         exercise. Calculated using the Mifflin-St Jeor equation.

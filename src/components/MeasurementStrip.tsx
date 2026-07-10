@@ -55,8 +55,8 @@ export default function MeasurementStrip({
               key={seg.label}
               style={{ width: `${Math.max(widthPct, 0)}%` }}
               className={`h-full ${
-                isActive ? "bg-clay" : "bg-sage/25"
-              } ${i !== 0 ? "border-l border-paper" : ""}`}
+                isActive ? "bg-gold-500" : "bg-forest-200"
+              } ${i !== 0 ? "border-l border-white" : ""}`}
             />
           );
         })}
@@ -71,7 +71,7 @@ export default function MeasurementStrip({
             transform: "translateX(-50%)",
           }}
         >
-          <div className="w-px h-4 bg-ink" />
+          <div className="w-px h-4 bg-forest-900" />
         </div>
       </div>
 
@@ -82,7 +82,7 @@ export default function MeasurementStrip({
             key={seg.label}
             className={
               seg.label === segments[activeIndex]?.label
-                ? "text-clay font-semibold"
+                ? "text-gold-600 font-semibold"
                 : ""
             }
           >

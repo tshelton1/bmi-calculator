@@ -13,9 +13,9 @@ export default function MacroBar({
   if (total <= 0) return null;
 
   const segments = [
-    { label: "Protein", calories: proteinCalories, color: "bg-clay" },
-    { label: "Fat", calories: fatCalories, color: "bg-sage/50" },
-    { label: "Carbs", calories: carbsCalories, color: "bg-ink/20" },
+    { label: "Protein", calories: proteinCalories, color: "bg-gold-500" },
+    { label: "Fat", calories: fatCalories, color: "bg-forest-400" },
+    { label: "Carbs", calories: carbsCalories, color: "bg-forest-200" },
   ];
 
   return (
@@ -29,7 +29,7 @@ export default function MacroBar({
               key={seg.label}
               style={{ width: `${widthPct}%` }}
               className={`h-full ${seg.color} ${
-                i !== 0 ? "border-l border-paper" : ""
+                i !== 0 ? "border-l border-white" : ""
               }`}
             />
           );

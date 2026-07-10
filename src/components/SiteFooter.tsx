@@ -35,7 +35,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <p className="font-mono text-[10px] uppercase tracking-widest text-paper font-bold mb-3">
+      <p className="eyebrow text-gold-400 mb-3">
         {title}
       </p>
       <ul className="space-y-2">
@@ -43,7 +43,7 @@ function FooterColumn({
           <li key={`${link.href}-${link.label}`}>
             <Link
               href={link.href}
-              className="text-sm text-ink font-bold hover:underline hover:decoration-paper transition-colors"
+              className="font-body text-xs text-forest-400 tracking-wide hover:text-gold-400 transition-colors duration-200"
               {...(openInNewTab
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
@@ -59,25 +59,29 @@ function FooterColumn({
 
 export default function SiteFooter() {
   return (
-    // bg-clay (#E8633C): white/near-white and ink text pass contrast on orange;
-    // default sage/gray body text would fail WCAG on this background — overridden below.
-    <footer className="bg-clay mt-16">
-      <div className="max-w-3xl mx-auto px-5 py-10">
+    <footer className="bg-forest-950 mt-16 border-t border-[rgba(184,150,106,0.2)]">
+      <div className="max-w-3xl mx-auto px-5 py-12">
         <div className="mb-8 max-w-xl">
-          <p className="text-paper font-bold mb-2">Living Healthier</p>
-          <p className="text-sm text-paper leading-relaxed">
+          <p className="font-display text-2xl font-light text-ivory-100 tracking-display">
+            Living Healthier
+          </p>
+          <p className="font-body text-xs text-forest-400 tracking-wide mt-2">
             Free health calculators and plain-English guides.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-8 mb-10 pb-10 border-b border-paper/30">
+        <hr className="divider-gold mb-10" />
+
+        <div className="grid sm:grid-cols-3 gap-8 mb-10 pb-10">
           <FooterColumn title="Calculators" links={CALCULATOR_LINKS} />
           <FooterColumn title="Resources" links={RESOURCE_LINKS} openInNewTab />
           <FooterColumn title="Legal" links={LEGAL_LINKS} openInNewTab />
         </div>
 
-        <div className="space-y-3 text-xs text-paper font-mono leading-relaxed">
-          <p>
+        <hr className="divider-gold mb-8" />
+
+        <div className="space-y-3 font-body text-xs text-forest-400 tracking-wide leading-relaxed">
+          <p className="text-forest-600">
             &copy; {new Date().getFullYear()} Living Healthier. For informational
             purposes only. Not medical advice.
           </p>
@@ -88,7 +92,7 @@ export default function SiteFooter() {
               href="/about"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-ink font-bold underline hover:decoration-paper transition-colors"
+              className="text-gold-400 underline underline-offset-2 hover:text-gold-500 transition-colors duration-200"
             >
               Read our disclaimer
             </Link>

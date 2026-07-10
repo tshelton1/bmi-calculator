@@ -69,7 +69,7 @@ function faqJsonLd() {
 
 export default function Home() {
   return (
-    <main className="max-w-3xl mx-auto px-5">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -77,42 +77,92 @@ export default function Home() {
         }}
       />
 
-      <section className="pt-10 pb-6">
-        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-ink mb-3 font-sans">
-          Take your measurement.
-        </h1>
-        <p className="text-sage text-base max-w-xl">
-          Enter your height and weight for an instant reading, plotted against
-          the standard clinical ranges. No account, no email, no waiting.
-        </p>
+      {/* Full-bleed hero — sits outside the max-w container */}
+      <section className="relative w-full overflow-hidden bg-forest-900">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(184,150,106,0.12) 0%, transparent 60%)",
+          }}
+        />
+        <span
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: "-0.1em",
+            left: "50%",
+            transform: "translateX(-50%)",
+            fontFamily: "var(--font-cormorant)",
+            fontSize: "clamp(120px, 22vw, 300px)",
+            fontWeight: "300",
+            color: "rgba(255,255,255,0.03)",
+            letterSpacing: "-0.05em",
+            lineHeight: 1,
+            userSelect: "none",
+            whiteSpace: "nowrap",
+            pointerEvents: "none",
+          }}
+        >
+          BMI
+        </span>
+
+        <div className="relative max-w-3xl mx-auto px-6 py-20">
+          <p className="eyebrow">Living Healthier · Measurements</p>
+          <div className="w-12 h-px bg-gold-500 mt-4 mb-6" />
+          <h1 className="font-display text-5xl md:text-7xl font-light text-ivory-100 tracking-display">
+            Take your measurement.
+          </h1>
+          <p className="font-body text-lg text-forest-200 font-light max-w-xl leading-relaxed mt-6">
+            Enter your height and weight for an instant reading, plotted against
+            the standard clinical ranges. No account, no email, no waiting.
+          </p>
+          <div className="mt-8">
+            <a
+              href="#calculator"
+              className="inline-block bg-gold-500 text-forest-950 font-body font-medium text-sm tracking-wide px-8 py-3.5 rounded-none hover:bg-gold-400 transition-colors duration-200"
+            >
+              Calculate Your BMI
+            </a>
+          </div>
+        </div>
       </section>
 
-      <BMICalculatorTool />
+      <main className="max-w-3xl mx-auto px-6 py-12" id="calculator">
+        <div className="scroll-mt-8">
+          <BMICalculatorTool />
+        </div>
 
-      <section className="mt-16 mb-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line">
+      <section className="mt-16 mb-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {[
           {
             href: "/healthy-weight-range",
+            eyebrow: "Weight Range",
             title: "Healthy Weight Range",
             desc: "Personalized lb range from height and frame estimate.",
           },
           {
             href: "/bmr-calculator",
+            eyebrow: "Metabolism",
             title: "BMR Calculator",
             desc: "How many calories your body burns at rest.",
           },
           {
             href: "/calorie-calculator",
+            eyebrow: "Energy",
             title: "Calorie Needs",
             desc: "Your full daily energy expenditure, by activity level.",
           },
           {
             href: "/body-fat-calculator",
+            eyebrow: "Composition",
             title: "Body Fat %",
             desc: "Navy circumference method, no calipers required.",
           },
           {
             href: "/macro-calculator",
+            eyebrow: "Nutrition",
             title: "Macro Calculator",
             desc: "Daily protein, fat, and carb targets by goal.",
           },
@@ -120,18 +170,27 @@ export default function Home() {
           <Link
             key={tool.href}
             href={tool.href}
-            className="bg-paper p-5 hover:bg-ink/[0.03] transition-colors group"
+            className="group bg-white border-l-2 border-gold-500 shadow-luxury-sm hover:shadow-luxury-md hover:border-gold-400 transition-all duration-300 p-8 rounded-none"
           >
-            <h3 className="text-ink font-semibold mb-1 group-hover:text-clay transition-colors">
+            <p className="eyebrow">{tool.eyebrow}</p>
+            <h3 className="font-display text-2xl font-medium text-ink-900 tracking-display mt-2">
               {tool.title}
             </h3>
-            <p className="text-sm text-sage">{tool.desc}</p>
+            <p className="font-body text-sm text-ink-500 leading-relaxed mt-3">
+              {tool.desc}
+            </p>
+            <span className="font-body text-xs font-medium tracking-wide uppercase text-gold-600 group-hover:text-gold-500 flex items-center gap-2 mt-6">
+              Open
+              <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                →
+              </span>
+            </span>
           </Link>
         ))}
       </section>
 
       <section className="mb-12">
-        <p className="font-mono text-xs uppercase tracking-widest text-clay mb-3">
+        <p className="eyebrow mb-3">
           About these calculators
         </p>
         <h2 className="text-xl font-semibold text-ink mb-4">
@@ -180,12 +239,13 @@ export default function Home() {
       </section>
 
       <section className="mb-16">
-        <p className="font-mono text-xs uppercase tracking-widest text-clay mb-3">
+        <p className="eyebrow mb-3">
           Common questions
         </p>
         <h2 className="text-xl font-semibold text-ink mb-4">FAQ</h2>
         <HomeFaqAccordion items={FAQ_ITEMS} />
       </section>
-    </main>
+      </main>
+    </>
   );
 }

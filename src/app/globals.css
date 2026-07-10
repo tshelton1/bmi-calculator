@@ -2,20 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+:root {
+  /* Semantic aliases */
+  --page-bg:          #FAFAF7;
+  --surface:          #FFFFFF;
+  --surface-muted:    #F5F0E8;
+  --border-subtle:    #EDE7D9;
+  --border-gold:      rgba(184, 150, 106, 0.35);
+  --text-primary:     #0F1F18;
+  --text-secondary:   #4A5E54;
+  --text-muted:       #8A9E94;
+  --accent-gold:      #B8966A;
+  --accent-forest:    #1A3329;
 }
 
+html {
+  scroll-behavior: smooth;
+  background-color: var(--page-bg);
+  color: var(--text-primary);
+}
+
+/* These unlayered rules previously hard-set the old paper palette. They now
+   point at the new semantic aliases so they don't override @layer base below
+   (unlayered styles win over layered ones in the cascade). */
 body {
-  background-color: #F7F5EF;
-  color: #0B1F1C;
+  background-color: var(--page-bg);
+  color: var(--text-primary);
 }
 
 /* Visible keyboard focus, no exceptions */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-  outline: 2px solid #E8633C;
+  outline: 2px solid var(--accent-gold);
   outline-offset: 2px;
 }
 
@@ -34,5 +53,141 @@ input[type="number"] {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@layer base {
+  html {
+    background-color: var(--page-bg);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    letter-spacing: -0.005em;
+    background-color: var(--page-bg);
+  }
+
+  /* Display headings use Cormorant */
+  h1 {
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  /* h3 and below stay in DM Sans */
+  h3, h4, h5, h6 {
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  /* Eyebrow / label text utility */
+  .eyebrow {
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+  }
+
+  /* Gold hairline divider */
+  .divider-gold {
+    border: none;
+    border-top: 1px solid var(--border-gold);
+    margin: 0;
+  }
+}
+
+@layer components {
+  /* Editorial prose treatment for long-form article/body content. This class
+     was previously undefined (a no-op) — defining it only styles descendant
+     elements that carry no explicit utility classes, so existing utility-styled
+     markup (e.g. text-clay links, text-xl headings) is unaffected. */
+  .prose-sage p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #2C3E35; /* ink-700 */
+  }
+
+  .prose-sage h2 {
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-size: 1.875rem;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: #0F1F18; /* ink-900 */
+    margin-top: 3.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .prose-sage h3 {
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0F1F18;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose-sage strong {
+    font-weight: 600;
+    color: #0F1F18;
+  }
+
+  .prose-sage a {
+    color: #8A6A38; /* gold-600 */
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+  }
+  .prose-sage a:hover {
+    color: #B8966A; /* gold-500 */
+  }
+
+  .prose-sage ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.25rem;
+    list-style: disc;
+  }
+  .prose-sage li {
+    margin-bottom: 0.5rem;
+    line-height: 1.85;
+    color: #2C3E35;
+  }
+
+  .prose-sage table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+  .prose-sage th {
+    background-color: #0F1F18; /* forest-900 */
+    color: #FAFAF7; /* ivory-100 */
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+  .prose-sage td {
+    border-bottom: 1px solid #EDE7D9; /* ivory-300 */
+    padding: 0.75rem 1rem;
+    color: #2C3E35;
   }
 }

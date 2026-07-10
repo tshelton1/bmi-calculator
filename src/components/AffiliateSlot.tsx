@@ -58,20 +58,24 @@ export default function AffiliateSlot({ placement }: { placement: Placement }) {
   const content = CONTENT[placement];
 
   return (
-    <aside className="mt-8 border border-line bg-ink/[0.02] p-5">
-      <span className="text-[10px] uppercase tracking-widest text-sage font-mono">
-        Affiliate
-      </span>
-      <h3 className="text-ink font-semibold mt-1.5 mb-1">{content.headline}</h3>
-      <p className="text-sm text-sage mb-3">{content.body}</p>
+    <aside className="mt-8 bg-ivory-200 border border-ivory-300 p-6 rounded-none">
+      <p className="eyebrow text-gold-600 mb-3">Physician-Recommended</p>
+      <h3 className="font-body font-semibold text-ink-900">{content.headline}</h3>
+      <p className="font-body text-sm text-ink-500 leading-relaxed mt-1">
+        {content.body}
+      </p>
       <a
         href={content.href}
         target="_blank"
         rel="noopener noreferrer sponsored"
-        className="inline-block text-sm font-mono text-clay border border-clay px-4 py-2 hover:bg-clay hover:text-paper transition-colors"
+        className="border border-gold-500 text-gold-600 text-xs tracking-wide uppercase font-medium px-5 py-2.5 rounded-none hover:bg-gold-500 hover:text-forest-950 transition-all duration-200 mt-4 inline-block"
       >
         {content.ctaLabel} →
       </a>
+      <p className="font-body text-xs text-ink-300 mt-3">
+        Affiliate link — as an Amazon Associate we may earn from qualifying
+        purchases, at no extra cost to you.
+      </p>
     </aside>
   );
 }

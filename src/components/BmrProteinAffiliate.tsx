@@ -16,20 +16,18 @@ export default function BmrProteinAffiliate({
     : "/protein-recommendations";
 
   return (
-    <aside className="mt-8 border border-line bg-ink/[0.02] p-5">
-      <span className="text-[10px] uppercase tracking-widest text-sage font-mono">
-        Affiliate
-      </span>
-      <h3 className="text-ink font-semibold mt-1.5 mb-1">
+    <aside className="mt-8 bg-ivory-200 border border-ivory-300 p-6 rounded-none">
+      <p className="eyebrow text-gold-600 mb-3">Physician-Recommended</p>
+      <h3 className="font-body font-semibold text-ink-900">
         Support your metabolism
       </h3>
-      <p className="text-sm text-sage mb-3">
+      <p className="font-body text-sm text-ink-500 leading-relaxed mt-1">
         Protein intake and resistance training both help preserve BMR during
         weight loss.
       </p>
       <a
         href={href}
-        className="inline-block text-sm font-mono text-clay border border-clay px-4 py-2 hover:bg-clay hover:text-paper transition-colors"
+        className="border border-gold-500 text-gold-600 text-xs tracking-wide uppercase font-medium px-5 py-2.5 rounded-none hover:bg-gold-500 hover:text-forest-950 transition-all duration-200 mt-4 inline-block"
       >
         See recommended protein options →
       </a>

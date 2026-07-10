@@ -52,8 +52,8 @@ export default function CalorieCalculatorTool() {
     poundsGoal > 0 ? Math.round(poundsGoal) : null;
 
   return (
-    <div className="border border-ink/20 bg-paper">
-      <div className="grid sm:grid-cols-2 gap-4 p-5 border-b border-ink/15">
+    <div className="bg-white shadow-luxury-md rounded-none border-t-2 border-gold-500">
+      <div className="grid sm:grid-cols-2 gap-4 p-5 md:p-8 border-b border-ivory-300">
         <div className="grid grid-cols-2 gap-4">
           <NumberField id="cal-feet" label="Height — ft" value={feet} onChange={setFeet} unit="ft" />
           <NumberField id="cal-inches" label="Height — in" value={inches} onChange={setInches} unit="in" />
@@ -69,32 +69,33 @@ export default function CalorieCalculatorTool() {
         </div>
       </div>
 
-      <div className="p-5">
-        {hasInput ? (
-          <>
-            <div className="flex items-end gap-3 mb-4">
-              <span className="text-5xl font-mono font-semibold text-ink leading-none">
-                {tdee.toLocaleString()}
-              </span>
-              <span className="text-sage text-sm font-mono pb-1.5">
-                calories / day to maintain weight
-              </span>
-            </div>
-            <div className="grid grid-cols-2 gap-px bg-line border border-line text-sm mb-6">
-              <div className="bg-paper p-3">
-                <p className="text-xs text-sage font-mono uppercase mb-1">To lose ~1lb/week</p>
-                <p className="font-mono font-semibold text-ink">
-                  {(tdee - 500).toLocaleString()} cal
+      {hasInput ? (
+        <>
+          <div className="bg-forest-900 border-l-2 border-gold-500 p-8 md:p-10">
+            <p className="eyebrow text-forest-200 mb-2">
+              Daily calories to maintain
+            </p>
+            <span className="block font-mono text-6xl md:text-7xl font-light text-gold-400 tracking-display leading-none">
+              {tdee.toLocaleString()}
+            </span>
+            <hr className="divider-gold my-6" />
+            <div className="grid grid-cols-2 gap-6">
+              <div>
+                <p className="eyebrow text-forest-400">Lose ~1lb / week</p>
+                <p className="font-mono text-2xl text-gold-400 mt-1">
+                  {(tdee - 500).toLocaleString()}
                 </p>
               </div>
-              <div className="bg-paper p-3">
-                <p className="text-xs text-sage font-mono uppercase mb-1">To gain ~1lb/week</p>
-                <p className="font-mono font-semibold text-ink">
-                  {(tdee + 500).toLocaleString()} cal
+              <div>
+                <p className="eyebrow text-forest-400">Gain ~1lb / week</p>
+                <p className="font-mono text-2xl text-gold-400 mt-1">
+                  {(tdee + 500).toLocaleString()}
                 </p>
               </div>
             </div>
+          </div>
 
+          <div className="p-5 md:p-8">
             <NumberField
               id="cal-pounds-to-lose"
               label="How many pounds do you want to lose?"
@@ -105,11 +106,11 @@ export default function CalorieCalculatorTool() {
 
             {estimatedWeeks !== null && (
               <div className="mt-4 space-y-3">
-                <p className="text-sm text-ink font-mono">
+                <p className="text-sm text-ink-700 font-mono">
                   At a moderate pace, this would take roughly {estimatedWeeks}{" "}
                   {estimatedWeeks === 1 ? "week" : "weeks"}.
                 </p>
-                <p className="text-xs text-sage font-mono leading-relaxed">
+                <p className="text-xs text-ink-500 font-mono leading-relaxed">
                   This is a rough estimate based on a general 500-calorie deficit.
                   Actual results vary by individual — faster weight loss goals require
                   larger deficits, which carry more risk of muscle loss and are not
@@ -119,48 +120,48 @@ export default function CalorieCalculatorTool() {
             )}
 
             <div className="mt-6">
-              <p className="text-xs text-sage font-mono uppercase mb-2">
-                Macro targets at moderate deficit
-              </p>
-              <div className="grid grid-cols-3 gap-px bg-line border border-line text-sm">
-                <div className="bg-paper p-3">
-                  <p className="text-xs text-sage font-mono uppercase mb-1">Protein</p>
-                  <p className="font-mono font-semibold text-ink">
+              <p className="eyebrow mb-2">Macro targets at moderate deficit</p>
+              <div className="grid grid-cols-3 gap-px bg-ivory-300 border border-ivory-300 text-sm">
+                <div className="bg-white p-3">
+                  <p className="text-xs text-ink-500 font-mono uppercase mb-1">Protein</p>
+                  <p className="font-mono font-semibold text-ink-900">
                     {macros.proteinG}g
                   </p>
                 </div>
-                <div className="bg-paper p-3">
-                  <p className="text-xs text-sage font-mono uppercase mb-1">Fat</p>
-                  <p className="font-mono font-semibold text-ink">
+                <div className="bg-white p-3">
+                  <p className="text-xs text-ink-500 font-mono uppercase mb-1">Fat</p>
+                  <p className="font-mono font-semibold text-ink-900">
                     {macros.fatG}g
                   </p>
                 </div>
-                <div className="bg-paper p-3">
-                  <p className="text-xs text-sage font-mono uppercase mb-1">Carbs</p>
-                  <p className="font-mono font-semibold text-ink">
+                <div className="bg-white p-3">
+                  <p className="text-xs text-ink-500 font-mono uppercase mb-1">Carbs</p>
+                  <p className="font-mono font-semibold text-ink-900">
                     {macros.carbsG}g
                   </p>
                 </div>
               </div>
-              <p className="text-xs text-sage font-mono mt-2">
+              <p className="text-xs text-ink-500 font-mono mt-2">
                 Based on {macros.calories.toLocaleString()} cal/day (TDEE − 500)
               </p>
             </div>
-          </>
-        ) : (
-          <p className="text-sage text-sm font-mono">
+          </div>
+        </>
+      ) : (
+        <div className="p-5 md:p-8">
+          <p className="text-ink-500 text-sm font-mono">
             Enter your stats and activity level to see daily calorie needs.
           </p>
-        )}
-      </div>
+        </div>
+      )}
 
       {hasInput && (
-        <div className="border-t border-ink/15 p-5">
+        <div className="border-t border-ivory-300 p-5 md:p-8">
           <ExampleMealsSection />
         </div>
       )}
 
-      <div className="border-t border-ink/15 p-5 text-xs text-sage font-mono leading-relaxed">
+      <div className="border-t border-ivory-300 p-5 text-xs text-ink-500 font-mono leading-relaxed">
         This is your Total Daily Energy Expenditure (TDEE) — BMR adjusted for
         activity level. The +/- 500 calorie estimates target roughly one
         pound of change per week; individual results vary.

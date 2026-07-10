@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import BodyFatCalculatorTool from "@/components/tools/BodyFatCalculatorTool";
 import AffiliateSlot from "@/components/AffiliateSlot";
+import { Accordion } from "@/components/ui/Accordion";
 import { SITE_URL } from "@/lib/constants";
 import {
   calculatorOpenGraph,
@@ -43,46 +44,56 @@ export default function BodyFatCalculatorPage() {
 
       <AffiliateSlot placement="bodyfat-mid" />
 
-      <section className="mt-12 prose-sage">
-        <h2 className="text-xl font-semibold text-ink mb-3">
-          The US Navy method
-        </h2>
-        <p className="text-sage mb-4 leading-relaxed">
-          Developed for military fitness assessments, this method estimates
-          body fat from neck and waist circumference (plus hip circumference
-          for women), without requiring calipers or specialized equipment.
-          It&apos;s not as precise as a DEXA scan, but it&apos;s free,
-          repeatable, and good enough to track real trends over time.
-        </p>
-        <h2 className="text-xl font-semibold text-ink mb-3 mt-8">
-          Getting an accurate measurement
-        </h2>
-        <p className="text-sage mb-4 leading-relaxed">
-          Measure waist at the navel, not at the narrowest point of the
-          torso. Measure neck just below the larynx (Adam&apos;s apple).
-          Keep the tape snug but not compressing the skin. Measuring at the
-          same time of day — ideally morning, before eating — improves
-          consistency between readings.
-        </p>
-        <h2 className="text-xl font-semibold text-ink mb-3 mt-8">
-          Why this differs from your BMI
-        </h2>
-        <p className="text-sage leading-relaxed">
-          BMI can&apos;t tell muscle from fat. This can, at least roughly.
-          If your{" "}
-          <a href="/bmi-calculator" className="text-clay underline">
-            BMI
-          </a>{" "}
-          reads higher than expected but your body fat percentage here comes
-          back in the &quot;athletic&quot; or &quot;fit&quot; range,
-          that&apos;s a strong sign the BMI number is being skewed by muscle
-          mass rather than excess fat. For a height-based weight band adjusted
-          by frame, see our{" "}
-          <a href="/healthy-weight-range" className="text-clay underline">
-            healthy weight range calculator
-          </a>
-          .
-        </p>
+      <section>
+        <p className="eyebrow mt-16 mb-6">About this calculator</p>
+        <Accordion
+          defaultOpenIndex={0}
+          items={[
+            {
+              question: "The US Navy method",
+              answer: (
+                <p>
+                  Developed for military fitness assessments, this method
+                  estimates body fat from neck and waist circumference (plus
+                  hip circumference for women), without requiring calipers or
+                  specialized equipment. It&apos;s not as precise as a DEXA
+                  scan, but it&apos;s free, repeatable, and good enough to
+                  track real trends over time.
+                </p>
+              ),
+            },
+            {
+              question: "Getting an accurate measurement",
+              answer: (
+                <p>
+                  Measure waist at the navel, not at the narrowest point of
+                  the torso. Measure neck just below the larynx (Adam&apos;s
+                  apple). Keep the tape snug but not compressing the skin.
+                  Measuring at the same time of day — ideally morning, before
+                  eating — improves consistency between readings.
+                </p>
+              ),
+            },
+            {
+              question: "Why this differs from your BMI",
+              answer: (
+                <p>
+                  BMI can&apos;t tell muscle from fat. This can, at least
+                  roughly. If your <a href="/bmi-calculator">BMI</a> reads
+                  higher than expected but your body fat percentage here comes
+                  back in the &quot;athletic&quot; or &quot;fit&quot; range,
+                  that&apos;s a strong sign the BMI number is being skewed by
+                  muscle mass rather than excess fat. For a height-based weight
+                  band adjusted by frame, see our{" "}
+                  <a href="/healthy-weight-range">
+                    healthy weight range calculator
+                  </a>
+                  .
+                </p>
+              ),
+            },
+          ]}
+        />
       </section>
     </main>
   );

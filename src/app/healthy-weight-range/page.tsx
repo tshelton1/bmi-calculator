@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ContentReviewAttribution from "@/components/ContentReviewAttribution";
 import HealthyWeightRangeTool from "@/components/tools/HealthyWeightRangeTool";
+import { Accordion } from "@/components/ui/Accordion";
 import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -38,39 +39,46 @@ export default function HealthyWeightRangePage() {
       <HealthyWeightRangeTool />
       <ContentReviewAttribution />
 
-      <section className="mt-12 prose-sage">
-        <h2 className="text-xl font-semibold text-ink mb-3">
-          How this differs from BMI alone
-        </h2>
-        <p className="text-sage mb-4 leading-relaxed">
-          Standard healthy BMI spans 18.5–24.9, which converts to a wide band
-          of pounds for any height. Two people of the same height with
-          different bone structure may feel best at different points within
-          that band. Wrist circumference is a long-used, imperfect proxy for
-          frame size — not as precise as clinical measurement, but practical
-          at home.
-        </p>
-        <h2 className="text-xl font-semibold text-ink mb-3 mt-8">
-          What the frame adjustment does
-        </h2>
-        <p className="text-sage mb-4 leading-relaxed">
-          We always show the full clinical range for transparency. The
-          personalized range is a narrower slice within those bounds: smaller
-          frames lean toward the lower half, larger frames toward the upper
-          half, and medium frames toward the center. It is guidance for
-          reflection, not a prescription.
-        </p>
-        <p className="text-sage leading-relaxed">
-          For composition context beyond weight, try the{" "}
-          <Link href="/body-fat-calculator" className="text-clay underline">
-            body fat calculator
-          </Link>{" "}
-          or estimate daily needs with our{" "}
-          <Link href="/calorie-calculator" className="text-clay underline">
-            calorie calculator
-          </Link>
-          .
-        </p>
+      <section>
+        <p className="eyebrow mt-16 mb-6">About this calculator</p>
+        <Accordion
+          defaultOpenIndex={0}
+          items={[
+            {
+              question: "How this differs from BMI alone",
+              answer: (
+                <p>
+                  Standard healthy BMI spans 18.5–24.9, which converts to a
+                  wide band of pounds for any height. Two people of the same
+                  height with different bone structure may feel best at
+                  different points within that band. Wrist circumference is a
+                  long-used, imperfect proxy for frame size — not as precise as
+                  clinical measurement, but practical at home.
+                </p>
+              ),
+            },
+            {
+              question: "What the frame adjustment does",
+              answer: (
+                <>
+                  <p>
+                    We always show the full clinical range for transparency.
+                    The personalized range is a narrower slice within those
+                    bounds: smaller frames lean toward the lower half, larger
+                    frames toward the upper half, and medium frames toward the
+                    center. It is guidance for reflection, not a prescription.
+                  </p>
+                  <p>
+                    For composition context beyond weight, try the{" "}
+                    <Link href="/body-fat-calculator">body fat calculator</Link>{" "}
+                    or estimate daily needs with our{" "}
+                    <Link href="/calorie-calculator">calorie calculator</Link>.
+                  </p>
+                </>
+              ),
+            },
+          ]}
+        />
       </section>
     </main>
   );

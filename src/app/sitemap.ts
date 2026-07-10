@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { getAllBlogSlugs } from "@/lib/blog";
+import { getAllBlogSlugs } from "@/lib/blog-posts";
 import { SITE_URL } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
