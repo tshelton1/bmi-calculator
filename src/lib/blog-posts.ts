@@ -1179,8 +1179,8 @@ POSTS.push({
   excerpt:
     "Want macros that actually match fat loss? Here is the exact order to calculate them, without the spreadsheet panic.",
   topicLabel: "Nutrition",
-  datePublished: TODAY,
-  dateReviewed: TODAY,
+  datePublished: "2026-07-10",
+  dateReviewed: "2026-07-10",
   ogImage: "/infographics/how-to-calculate-macros-for-weight-loss",
   relatedCalculators: [CALC.macros, CALC.tdee, CALC.bmr],
   contentHtml: `
@@ -1299,8 +1299,8 @@ POSTS.push({
   excerpt:
     "Using BMR as your daily calorie target is one of the fastest ways to feel wrecked on a diet. Here is why TDEE is the number that actually matters.",
   topicLabel: "Metabolism",
-  datePublished: TODAY,
-  dateReviewed: TODAY,
+  datePublished: "2026-07-10",
+  dateReviewed: "2026-07-10",
   ogImage: "/infographics/bmr-vs-tdee-for-fat-loss",
   relatedCalculators: [CALC.bmr, CALC.tdee, CALC.macros],
   contentHtml: `
@@ -1412,8 +1412,8 @@ POSTS.push({
   excerpt:
     "Can you eat pizza and still lose fat? With an 80/20 approach, yes, if the calorie math still adds up.",
   topicLabel: "Nutrition",
-  datePublished: TODAY,
-  dateReviewed: TODAY,
+  datePublished: "2026-07-10",
+  dateReviewed: "2026-07-10",
   ogImage: "/infographics/eighty-twenty-rule-flexible-dieting",
   relatedCalculators: [CALC.macros, CALC.tdee, CALC.bmi],
   contentHtml: `
