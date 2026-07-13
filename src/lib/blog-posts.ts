@@ -1504,3 +1504,355 @@ POSTS.push({
     },
   ],
 });
+
+POSTS.push({
+  slug: "what-is-a-healthy-weight-for-my-height",
+  title: "What Is a Healthy Weight for My Height? A Physician's Honest Answer",
+  description:
+    "A physician explains healthy weight for your height — why charts oversimplify, what BMI misses by height, and how to set a goal that fits your frame.",
+  excerpt:
+    "Height-weight charts give you a range. Your frame, muscle, and waist decide where inside that range you should actually live.",
+  topicLabel: "Weight Management",
+  datePublished: "2026-07-13",
+  dateReviewed: "2026-07-13",
+  ogImage: "/infographics/what-is-a-healthy-weight-for-my-height",
+  relatedCalculators: [CALC.weightRange, CALC.bmi, CALC.bodyFat],
+  contentHtml: `
+    <p>A healthy weight for your height is almost never one number. It is a range — and for most adults, that range is wider than the chart on the clinic wall suggests.</p>
+    <p>Patients ask me this every week, often with a printout or a screenshot in hand. What they want is a target. What they need is context: bone frame, muscle, where fat sits, age, and what their labs are doing. Without those, a height-weight table is just arithmetic dressed up as destiny.</p>
+
+    <h2 id="why-charts-oversimplify">Why height-weight tables oversimplify the picture</h2>
+    <p>Classic charts convert height into an "ideal" weight band using population averages. They were built for screening crowds, not for deciding what one person should weigh. Two people at 5'6" can both be healthy at very different scale numbers if one carries more muscle and the other carries more fat around the waist.</p>
+    <p>A common thing I hear in clinic is, "I hit the chart weight, but I still feel soft and my jeans do not fit." That is the chart failing them, not their willpower. The chart never asked about waist size, training history, or menopause. It only asked how tall they are.</p>
+    <p>Use a chart as a starting window. Then narrow it with better tools. Our <a href="/healthy-weight-range">healthy weight range calculator</a> does that by pairing height with a wrist-based frame estimate, so you see a personalized band instead of one generic bullseye.</p>
+
+    <h2 id="bmi-and-height">What BMI actually tells you at different heights</h2>
+    <p>BMI is weight divided by height squared. At the population level it correlates with body fat. For one person, especially at the extremes of height, it gets noisier. Very tall adults can look "heavier" on BMI than their composition deserves. Shorter adults can look "lighter" while carrying more central fat than the number implies.</p>
+    <p>That is why I never stop at BMI alone. A BMI of 24 on a short woman with a 36-inch waist worries me more than a BMI of 26 on a tall, muscular man with a flat abdomen. Same tool, different story. You can <a href="/bmi-calculator">calculate your BMI</a> in seconds — then immediately ask whether the number matches your waist and your strength.</p>
+    <p>If you want the deeper limitations of that ratio, I walked through them in our guide on <a href="/blog/bmi-limitations-and-alternatives">BMI limitations and better alternatives</a>. The short version: BMI is a smoke detector, not a biopsy.</p>
+
+    <h2 id="frame-muscle-waist">What your weight goal should actually be based on</h2>
+    <p>In practice, I build a weight goal from three anchors, not one chart line.</p>
+    <p>First, frame. Wrist circumference is an imperfect home proxy for bone structure, but it is useful. Small-framed people often feel and function best toward the lower half of a healthy BMI band. Large-framed people often do better toward the upper half. Pretending everyone at 5'7" should weigh 140 pounds ignores skeletal reality.</p>
+    <p>Second, lean mass. If you lift and eat enough protein, a higher scale weight can be the healthy choice. Muscle protects metabolism, balance, and blood sugar. Chasing the lightest number on the chart while losing muscle is a clinical own-goal — especially after 40.</p>
+    <p>Third, waist. Keep your waist under half your height as a simple risk check. That ratio catches the dangerous abdominal fat BMI cannot see. Most of my patients who ignore waist and worship the scale end up "on target" by weight and still metabolically off.</p>
+
+    <h2 id="how-to-pick-a-target">How to pick a target without obsessing</h2>
+    <p>Start with the clinical healthy BMI window for your height — roughly the weights that land between 18.5 and 24.9. Then ask where inside that window fits your frame and lifestyle. If your body fat estimate is high and your waist is rising, bias lower within the band. If you are muscular, strong, and metabolically healthy, sit comfortably higher and stop apologizing for it.</p>
+    <p>Pair the scale with a <a href="/body-fat-calculator">body fat percentage estimate</a> every few weeks. Trends beat single readings. Water, glycogen, and hormones move the scale day to day. Composition moves slower and tells the truth.</p>
+    <p>If you have a lot of weight to lose, do not pick the absolute bottom of the chart on day one. Pick the next 8 to 12 pounds that improve waist, energy, and labs. Then reassess. Goals that feel reachable get finished. Fantasy targets get abandoned by week three.</p>
+    <p>Write the range down. Pick a midpoint that feels honest for your training and life, not a fantasy from a decade ago. Revisit it after you lose the first 5 percent of body weight, because the "right" target often shifts once your waist and energy start changing.</p>
+
+    <h2 id="when-to-worry">When the number should send you to a clinician</h2>
+    <p>A healthy weight conversation is incomplete without red flags. Rapid unexplained loss, a BMI drifting under 18.5, waist climbing past 35 inches in women or 40 in men, or a "normal" weight with rising blood pressure and fasting glucose all deserve a real visit — not another app download.</p>
+    <p>Thyroid disease, medications, sleep apnea, and perimenopause can all scramble the relationship between height and weight. If the math on the chart does not match how your body is behaving, believe your body and get labs.</p>
+
+    <h2 id="bottom-line">The bottom line</h2>
+    <p>A healthy weight for your height is a range shaped by frame, muscle, and waist — not a single destiny number from a poster. Run your height through the <a href="/healthy-weight-range">healthy weight range calculator</a>, check BMI for context, and use waist and body fat to decide where inside the band you belong. Then build the habit that moves you there, instead of arguing with a chart that never met you.</p>
+  `,
+  faq: [
+    {
+      question: "What is a healthy weight for my height?",
+      answer:
+        "It is usually a range, not one number. For adults, start with the weights that place BMI between 18.5 and 24.9 for your height, then adjust for frame size, muscle mass, and waist circumference.",
+    },
+    {
+      question: "Are height and weight charts accurate?",
+      answer:
+        "They are useful as a rough window, not a final verdict. Charts ignore muscle, fat location, bone frame, age, and metabolic health, so two people of the same height can be healthy at different weights.",
+    },
+    {
+      question: "Should I aim for the lowest weight in my healthy range?",
+      answer:
+        "Not automatically. Smaller frames may do well toward the lower half, but muscular or larger-framed adults often function best mid to upper range. Waist size and strength matter more than hitting the lightest chart number.",
+    },
+    {
+      question: "How do I find my personalized healthy weight range?",
+      answer:
+        "Use a height-based BMI band, then narrow it with frame size and body composition. Our healthy weight range calculator estimates a frame-adjusted range from height and wrist circumference.",
+    },
+  ],
+});
+
+POSTS.push({
+  slug: "how-many-calories-should-i-eat-a-day",
+  title: "How Many Calories Should I Eat a Day? Skip the 2,000-Calorie Default",
+  description:
+    "How many calories should I eat a day? A physician explains why the 2,000-calorie label fails most people and how to find your real daily number.",
+  excerpt:
+    "The nutrition label's 2,000 calories is a population average, not your prescription. Here is how to find the number that matches your body.",
+  topicLabel: "Metabolism",
+  datePublished: "2026-07-12",
+  dateReviewed: "2026-07-12",
+  ogImage: "/infographics/how-many-calories-should-i-eat-a-day",
+  relatedCalculators: [CALC.tdee, CALC.bmr, CALC.macros],
+  contentHtml: `
+    <p>Most adults should not eat 2,000 calories a day just because the label said so. That figure is a regulatory average for general food labeling — not a personalized target for you.</p>
+    <p>In clinic, I meet people who have been stuck for months because they treated 2,000 like a medical order. Some need closer to 1,600 to lose fat. Others maintain closer to 2,600 and wonder why "eating right" still leaves them exhausted. The right daily number starts with your body, not the side of a cereal box.</p>
+
+    <h2 id="why-2000-fails">Why the 2,000-calorie default fails most people</h2>
+    <p>Food labels in the United States use about 2,000 calories as a reference so shoppers can compare products. It was never meant to be your prescription. Age, sex, height, weight, muscle mass, and daily movement all change energy needs — often by hundreds of calories.</p>
+    <p>A sedentary woman in her fifties and a 30-year-old man who lifts four days a week do not share a food budget. Pretending they do is how people underfuel training or overshoot fat loss without understanding why the scale will not cooperate.</p>
+    <p>Most people I see who "eat clean at 2,000" without results are simply using the wrong ceiling. The food quality may be fine. The math is not.</p>
+
+    <h2 id="find-your-number">How to find your actual daily calorie number</h2>
+    <p>Start with resting burn, then add real life.</p>
+    <p>Your basal metabolic rate — BMR — estimates what you burn at complete rest. It is the floor. Our <a href="/bmr-calculator">BMR calculator</a> uses the Mifflin-St Jeor equation from age, sex, height, and weight. That number alone is not what you should eat every day unless you are truly bedbound.</p>
+    <p>Next, estimate total daily energy expenditure — TDEE — by adjusting BMR for activity. That is the practical maintenance number for a normal week. The <a href="/calorie-calculator">calorie needs calculator</a> does both steps and also shows rough targets for losing or gaining about a pound a week.</p>
+    <p>For fat loss, I usually start most adults about 500 calories below TDEE, not below BMR. That moderate gap is often sustainable and less likely to shred muscle than aggressive restriction. If you want the difference spelled out more carefully, read <a href="/blog/bmr-vs-tdee-for-fat-loss">BMR vs TDEE for fat loss</a>.</p>
+    <p>Be honest on the activity menu. "Very active" is not your three gym sessions plus a sedentary job. If you sit most of the day, start lower. Inflated activity is the most common way people hand themselves phantom calories.</p>
+
+    <h2 id="maintenance-loss-gain">What maintenance, loss, and gain look like</h2>
+    <p>Think in three lanes. Maintenance is TDEE. Loss is TDEE minus a modest deficit. Gain is TDEE plus a modest surplus. The exact calories depend on your estimate, but the structure stays the same.</p>
+    <p>In practice, this means a person with a TDEE near 2,300 might maintain around 2,300, lose near 1,800, and gain near 2,600 to 2,800. Those are examples, not universal rules. Your calculator output beats any blog example — including this one.</p>
+    <p>After you have calories, turn them into protein, fat, and carbs with the <a href="/macro-calculator">macro calculator</a>. Calories decide whether weight moves. Protein decides how much of that movement is fat versus muscle.</p>
+
+    <h2 id="why-the-number-changes">Why your calorie needs change</h2>
+    <p>Your number is not permanent. Lose a meaningful amount of weight and your BMR drops because a smaller body costs less energy to run. Age quietly lowers resting burn as muscle declines. A new desk job or a new training block can swing TDEE by more than people expect.</p>
+    <p>Medications, thyroid status, sleep, and stress also matter. I have watched patients "fail" a calorie plan that was perfect on paper because poor sleep was driving late-night eating and lowering spontaneous movement. The spreadsheet never saw that.</p>
+    <p>Recalculate every few months during an active goal, or after a plateau lasting two to three honest weeks. If the scale will not move, step your activity level down one notch before you slash another 400 calories. Most people overestimate how active they are.</p>
+
+    <h2 id="how-to-use-the-number">How to use the number without losing your mind</h2>
+    <p>Treat the first estimate as a hypothesis. Eat near it for two to three weeks. Track weight trend, energy, and workouts. Adjust 100 to 200 calories at a time. That is clinical patience, not failure.</p>
+    <p>You do not need perfection at every meal. Weekly averages matter more than a single high Saturday. If weekends erase weekdays, the daily target is irrelevant. Fix the pattern, not just the app setting.</p>
+    <p>And please stop comparing your calories to your partner's or your coworker's. Different bodies, different jobs, different muscle. Their number is not a moral score for yours.</p>
+    <p>Weigh yourself a few times a week and look at the weekly average. One salty dinner can hide fat loss for days. If energy is collapsing or workouts are falling apart, the target is too low even if the spreadsheet looks "aggressive and impressive." Impressive is not the goal. Sustainable is.</p>
+
+    <h2 id="hunger-vs-math">When hunger disagrees with the math</h2>
+    <p>Sometimes the calculator is right and your portions are drifting. Sometimes the calculator used an activity level that only exists in your head. And sometimes you are under-eating protein, sleeping five hours, and calling the resulting fridge raids a "metabolism problem."</p>
+    <p>Before you throw the plan out, raise protein, tighten weekend estimates, and check sleep. If you are truly consistent and still gaining or exhausted at a supposed maintenance intake, get checked — thyroid disease and medications can change the picture. Guessing harder is not a diagnostic plan.</p>
+
+    <h2 id="bottom-line">The bottom line</h2>
+    <p>How many calories you should eat a day depends on your BMR, your activity, and your goal — not the 2,000-calorie footnote on a nutrition label. Estimate BMR, build TDEE, then set maintenance, loss, or gain from there. Start with the <a href="/bmr-calculator">BMR calculator</a> and the <a href="/calorie-calculator">calorie calculator</a>, then keep adjusting to reality instead of arguing with a label written for nobody in particular.</p>
+  `,
+  faq: [
+    {
+      question: "How many calories should I eat a day?",
+      answer:
+        "It depends on your age, sex, size, and activity. Estimate your TDEE for maintenance, then eat about 500 calories below that for gradual fat loss, or slightly above it for gain. The 2,000-calorie label average is not personalized.",
+    },
+    {
+      question: "Is 2,000 calories a day right for everyone?",
+      answer:
+        "No. It is a general labeling reference. Many smaller or less active adults need less to lose or maintain weight, while larger or highly active people often need more.",
+    },
+    {
+      question: "Should I eat below my BMR?",
+      answer:
+        "Usually not for long stretches. Set fat-loss calories below TDEE while staying above BMR when possible. Chronically eating below BMR raises the risk of fatigue, muscle loss, and rebound hunger.",
+    },
+    {
+      question: "How often should I recalculate my calories?",
+      answer:
+        "Every few months during an active goal, after significant weight change, or after a two-to-three-week plateau despite consistent intake. Activity level and body size both shift the math.",
+    },
+  ],
+});
+
+POSTS.push({
+  slug: "healthy-body-fat-percentage-for-women",
+  title: "Healthy Body Fat Percentage for Women: Ranges That Actually Matter",
+  description:
+    "Healthy body fat percentage for women explained by a physician — essential fat, fitness ranges, age targets, and why the scale cannot tell this story.",
+  excerpt:
+    "Women need more essential fat than men. Here are the ranges I use in practice, and why body fat beats the scale for real progress.",
+  topicLabel: "Body Composition",
+  datePublished: "2026-07-11",
+  dateReviewed: "2026-07-11",
+  ogImage: "/infographics/healthy-body-fat-percentage-for-women",
+  relatedCalculators: [CALC.bodyFat, CALC.bmi, CALC.weightRange],
+  contentHtml: `
+    <p>A healthy body fat percentage for most adult women lands roughly in the low-to-mid 20s through the low 30s, depending on age and sport — not the single-digit numbers social media pretends are normal.</p>
+    <p>Women carry more essential fat than men for reproductive and hormonal function. Chasing a male athlete's look is not discipline. It is often a setup for fatigue, cycle disruption, and injury. In clinic I care less about a flattering mirror selfie and more about whether fat mass, strength, and labs tell a coherent story.</p>
+
+    <h2 id="essential-fitness-obesity">Essential fat, fitness fat, and higher-risk ranges</h2>
+    <p>Essential fat is the amount a woman's body needs for normal physiology — typically around 10 to 13 percent. That is not a goal for everyday life. It is a biological minimum. Dropping near it for long stretches can disrupt periods, bone health, and mood.</p>
+    <p>Athletes often sit somewhere in the mid-teens to low 20s. Fitness-oriented non-athletes commonly land in the low-to-mid 20s. Average healthy ranges for many women extend into the high 20s and low 30s, especially with age. Obesity-range body fat is generally much higher and usually pairs with metabolic risk — though waist and labs still matter more than one percentage point.</p>
+    <p>These bands are guides, not moral categories. A dancer at 18 percent and a strong 55-year-old at 31 percent can both be healthy. Context decides.</p>
+
+    <h2 id="why-not-the-scale">Why body fat tells a different story than the scale</h2>
+    <p>The scale cannot tell muscle from fat. That is the whole problem. Two women at 150 pounds can look and feel completely different if one rebuilt muscle and the other lost it while "dieting."</p>
+    <p>A common pattern I see: weight barely moves for six weeks, the patient is discouraged, and then we check composition. Waist is down. Strength is up. Clothes fit. Body fat percentage dropped even though the scale argued. Without that second number, she would have quit a plan that was working.</p>
+    <p>BMI has the same blind spot. Our piece on <a href="/blog/bmi-vs-body-fat-percentage">BMI versus body fat percentage</a> covers why composition beats the ratio when the two disagree. If your BMI looks "fine" but your waist is climbing, believe the waist.</p>
+
+    <h2 id="targets-by-age">What to aim for by age group</h2>
+    <p>Body fat tends to rise with age even when weight holds steady, mostly because muscle declines and hormones shift. That does not mean every increase is harmless — especially when it piles onto the abdomen.</p>
+    <p>In practice, I am more flexible with absolute percentage as women move through their 40s and 50s, and stricter about waist-to-height ratio and strength. A slightly higher body fat with a stable waist, solid lifting, and clean labs worries me less than a lower percentage glued to a growing midsection and rising fasting glucose.</p>
+    <p>For younger women, very low body fat plus missed periods is a stop sign, not a trophy. For midlife women, rapid central gain during perimenopause deserves attention even if the scale only moved a few pounds. Different decades, different warning lights.</p>
+    <p>Rough orientation, not a commandment: many women in their 20s and 30s feel and function well in the low-to-mid 20s percent range, while healthy averages often drift higher later. Your sport, genetics, and medical history still outrank any decade table.</p>
+
+    <h2 id="how-to-measure">How to measure without buying a clinic</h2>
+    <p>DEXA is more precise. Most people do not need it every month. For home tracking, circumference methods are repeatable enough to spot trends if you measure the same way each time.</p>
+    <p>Our <a href="/body-fat-calculator">body fat calculator</a> uses the US Navy tape method — neck, waist, and hips for women. Measure in the morning, tape snug but not digging, waist at the navel. Log the result every two to four weeks. Obsessing daily is noise.</p>
+    <p>Calipers can work in trained hands. Bathroom scales with bioimpedance are convenient and inconsistent. Use one tool consistently rather than hopping between three devices that disagree.</p>
+
+    <h2 id="how-to-improve">How to improve the number that matters</h2>
+    <p>You lower body fat by sustaining a moderate calorie deficit while protecting muscle. That means protein high enough to hang onto lean tissue, and resistance training so the body has a reason to keep it. Endless cardio with tiny meals often shrinks the scale and the muscle together — and the mirror does not look "toned."</p>
+    <p>Sleep and alcohol matter more than people want to admit. Poor sleep drives hunger hormones sideways. Alcohol is easy calories that also wreck recovery. I can usually spot the patient who is "perfect" Monday through Thursday and undoing it Friday through Sunday without looking at a food log.</p>
+    <p>If you also want a height-based weight window while you improve composition, pair body fat tracking with the <a href="/healthy-weight-range">healthy weight range calculator</a>. Weight and fat percentage together beat either one alone.</p>
+    <p>Give any change eight to twelve weeks before you declare failure. Body fat percentage is a lagging indicator. Strength in the gym and a quieter waistband often move first. Trust those while the percentage catches up.</p>
+
+    <h2 id="bottom-line">The bottom line</h2>
+    <p>Healthy body fat percentage for women is a band shaped by age and function, not a single influencer number. Essential fat is a minimum, not a target. Use a consistent estimate from the <a href="/body-fat-calculator">body fat calculator</a>, watch your waist, lift, eat enough protein, and judge progress by composition and labs — not by whether the scale flattered you this morning.</p>
+  `,
+  faq: [
+    {
+      question: "What is a healthy body fat percentage for women?",
+      answer:
+        "Many healthy women fall roughly in the low-to-mid 20s to low 30s, with athletes often lower and averages rising somewhat with age. Essential fat for women is about 10 to 13 percent and is not an everyday goal.",
+    },
+    {
+      question: "Is lower body fat always healthier for women?",
+      answer:
+        "No. Very low body fat can disrupt menstrual cycles, bone health, and energy. Health depends on where fat is stored, strength, and metabolic labs — not on chasing the lowest possible percentage.",
+    },
+    {
+      question: "Why is my weight the same but my body looks different?",
+      answer:
+        "You may be gaining muscle and losing fat, or the reverse. The scale cannot tell them apart. Body fat percentage and waist measurements explain changes the scale misses.",
+    },
+    {
+      question: "How can I estimate body fat at home?",
+      answer:
+        "Circumference methods like the US Navy formula are practical for trends. Measure consistently, preferably in the morning, and recheck every few weeks rather than daily.",
+    },
+  ],
+});
+
+POSTS.push({
+  slug: "how-much-protein-do-i-need-per-day",
+  title: "How Much Protein Do I Need Per Day? More Than the Old RDA",
+  description:
+    "How much protein do I need per day? A physician explains why 0.8 g/kg is too low for many adults and how to set a practical daily target.",
+  excerpt:
+    "The old protein RDA prevents deficiency. It does not optimize muscle, aging, or fat loss. Here is what I recommend instead.",
+  topicLabel: "Nutrition",
+  datePublished: "2026-07-10",
+  dateReviewed: "2026-07-10",
+  ogImage: "/infographics/how-much-protein-do-i-need-per-day",
+  relatedCalculators: [CALC.macros, CALC.tdee, CALC.bmr],
+  contentHtml: `
+    <p>Most active adults — and nearly everyone over 50 — need more protein per day than the old 0.8 grams per kilogram RDA. That number was built to prevent frank deficiency in sedentary populations, not to protect muscle during fat loss or aging.</p>
+    <p>In clinic, protein under-eating is one of the quietest problems I see. People cut calories, keep carbs and convenience foods, and wonder why they feel flat, recover poorly, and lose strength along with the weight. The deficit did its job. The protein intake did not.</p>
+
+    <h2 id="why-rda-falls-short">Why 0.8 g/kg falls short for real life</h2>
+    <p>The Recommended Dietary Allowance is a minimum to avoid deficiency for most healthy people. It is not an optimal target for lifters, busy walkers who want better body composition, or adults fighting age-related muscle loss.</p>
+    <p>When you diet, the body can pull energy from fat or from muscle. Higher protein tips that decision toward keeping muscle. When you age, anabolic resistance means the same protein dose builds less muscle than it did at 25 — so the practical target goes up, not down.</p>
+    <p>Most of my patients who "eat enough protein" are counting a yogurt lid and a chicken breast across an entire day. On paper they feel virtuous. By gram count they are short every single afternoon and evening.</p>
+
+    <h2 id="practical-targets">Practical daily targets I actually use</h2>
+    <p>For fat loss and muscle retention, a workable range for many adults is about 0.7 to 1.0 grams of protein per pound of body weight — or per goal weight if you have substantial weight to lose. In metric terms, that is often near 1.6 to 2.2 grams per kilogram.</p>
+    <p>You do not need bodybuilder extremes. You need a floor you hit most days. A 160-pound adult aiming near 0.8 to 1.0 grams per pound is looking at roughly 130 to 160 grams daily. Distribute that across meals so you are not trying to swallow 80 grams at 9 p.m.</p>
+    <p>Set calories first with the <a href="/calorie-calculator">calorie calculator</a>, then lock protein before you argue about carbs and fat. The <a href="/macro-calculator">macro calculator</a> does that split for you once your calorie target and goal are clear.</p>
+    <p>If absolute grams feel impossible at first, improve breakfast alone for a week. Getting 30 grams before noon changes the whole day's trajectory more than people expect.</p>
+
+    <h2 id="what-happens-when-low">What happens when people under-eat protein while losing weight</h2>
+    <p>Clinically, low-protein dieting shows up as stalled strength, harder hunger, and "skinny-fat" results — the scale drops, the waist barely improves, and energy tanks. Some of the weight lost is muscle, which lowers resting burn and makes regain easier later.</p>
+    <p>I also see more snacking chaos. Protein is the most filling macronutrient for many people. Remove it and the same calorie budget feels like punishment. That is not lack of character. That is physiology asking for a better template.</p>
+    <p>If your plan is aggressive and protein is low, fix protein before you cut another hundred calories. The order matters.</p>
+
+    <h2 id="how-to-hit-targets">How to hit the number without living in a chicken factory</h2>
+    <p>Anchor every meal with a protein source first, then add produce and carbs around it. Eggs, Greek yogurt, cottage cheese, fish, poultry, lean beef, tofu, tempeh, and lentils all count. A scoop of whey or a quality plant powder is a tool, not a moral failure — especially at breakfast, where most people miss.</p>
+    <p>Repeat meals. The patients who succeed are rarely inventing a new gourmet plate daily. They have two breakfasts and three lunches that reliably deliver 25 to 40 grams, and they stop negotiating with themselves at 7 a.m.</p>
+    <p>If you want the step-by-step macro math — protein first, fat floor, carbs for the rest — use our guide on <a href="/blog/how-to-calculate-macros-for-weight-loss">how to calculate macros for weight loss</a>. The arithmetic is simple once calories are set.</p>
+    <p>Weigh protein foods for two weeks if portions are fuzzy. Most people underestimate peanut butter and overestimate chicken. After that, you can loosen up and still land close enough. Consistency beats a perfect food scale forever.</p>
+
+    <h2 id="special-groups">Who needs to be especially deliberate</h2>
+    <p>Adults over 50. Anyone in a calorie deficit. People returning to lifting after time off. Postpartum patients cleared for training, when muscle rebuilding and recovery both demand raw material. Vegetarians can hit targets, but they usually need more planning because many plant proteins arrive with more carbohydrate attached.</p>
+    <p>Kidney disease is the major caveat. If you have diagnosed renal disease, do not freelance high-protein targets — talk with your clinician or a renal dietitian. For healthy kidneys, higher protein intakes in the ranges above are generally well tolerated in the evidence we use clinically.</p>
+
+    <h2 id="bottom-line">The bottom line</h2>
+    <p>How much protein you need per day is higher than the old RDA for most people who lift, diet, or plan to age with strength. Set calories, lock a protein floor near 0.7 to 1.0 grams per pound, and build meals around that number. Run your targets through the <a href="/macro-calculator">macro calculator</a>, keep intake honest for a few weeks, and judge success by hunger, strength, and waist — not by whether you stayed near a minimum built to prevent deficiency rather than to help you thrive.</p>
+  `,
+  faq: [
+    {
+      question: "How much protein do I need per day?",
+      answer:
+        "For many active adults and people losing weight, about 0.7 to 1.0 grams per pound of body weight (or goal weight) works well. The 0.8 g/kg RDA is a minimum to prevent deficiency, not an optimal target for muscle retention.",
+    },
+    {
+      question: "Is the RDA of 0.8 g/kg enough?",
+      answer:
+        "It prevents deficiency for most sedentary healthy adults, but it is often too low for people who train, diet, or are older. Those groups usually do better with a higher daily intake.",
+    },
+    {
+      question: "What happens if I diet without enough protein?",
+      answer:
+        "You are more likely to lose muscle along with fat, feel hungrier, recover poorly, and regain weight more easily because resting metabolism can fall with the muscle you lost.",
+    },
+    {
+      question: "Can I get enough protein without supplements?",
+      answer:
+        "Yes. Whole foods can cover the target if you plan meals around eggs, dairy, fish, poultry, legumes, soy foods, and lean meats. Powder is optional convenience, not a requirement.",
+    },
+  ],
+});
+
+POSTS.push({
+  slug: "what-is-a-good-bmi",
+  title: "What Is a Good BMI? The Textbook Range — and When to Ignore It",
+  description:
+    "What is a good BMI? A physician explains the 18.5–24.9 range, when \"normal\" hides risk, and when \"overweight\" can still be metabolically fine.",
+  excerpt:
+    "18.5 to 24.9 is the chart answer. Age, muscle, sex, and waist decide whether that chart is telling you the truth.",
+  topicLabel: "Understanding BMI",
+  datePublished: "2026-07-09",
+  dateReviewed: "2026-07-09",
+  ogImage: "/infographics/what-is-a-good-bmi",
+  relatedCalculators: [CALC.bmi, CALC.weightRange, CALC.bodyFat],
+  contentHtml: `
+    <p>A good BMI for most adults lands between 18.5 and 24.9 — that is the textbook answer. It is also incomplete without age, sex, muscle mass, and waist size sitting next to it.</p>
+    <p>I use BMI every week. I do not worship it. Patients who treat 24.9 like a cliff and 25.0 like a verdict are fighting a screening tool as if it were a diagnosis. That anxiety helps no one.</p>
+
+    <h2 id="the-standard-range">What 18.5 to 24.9 actually means</h2>
+    <p>Those cutoffs come from population data linking BMI bands to health risk across large groups. Under 18.5 is underweight. 18.5 to 24.9 is normal. 25 to 29.9 is overweight. 30 and above is obese, with further classes above that.</p>
+    <p>Across a crowd, higher BMI tracks with higher rates of diabetes, heart disease, and other metabolic problems. For one person standing in my office, the relationship can bend. Muscle, fat location, fitness, and labs decide whether the label fits.</p>
+    <p>You can <a href="/bmi-calculator">calculate your BMI</a> in moments. Spend longer on interpretation than on the arithmetic.</p>
+
+    <h2 id="when-normal-hides-problems">When a \"normal\" BMI can hide problems</h2>
+    <p>Normal-weight obesity is real. Someone can sit at BMI 23 with a thick waist, low muscle, rising triglycerides, and climbing fasting glucose. The chart says fine. The metabolism says otherwise.</p>
+    <p>I see this in midlife women especially, when estrogen shifts push fat toward the abdomen even if the scale barely moves. A "good" BMI with a waist over 35 inches is not a free pass. Measure the waist. Check labs. Look at strength.</p>
+    <p>If you want age-specific nuance, our guide on <a href="/blog/healthy-bmi-range-by-age">healthy BMI range by age</a> explains why the same cutoff hits differently at 25 and at 70.</p>
+
+    <h2 id="when-overweight-is-fine">When an \"overweight\" BMI is clinically fine</h2>
+    <p>Muscular adults land in overweight territory all the time. Dense muscle raises weight without raising metabolic risk the way visceral fat does. A lifter at BMI 27 with a healthy waist and excellent labs is not the same patient as a sedentary adult at 27 with central obesity.</p>
+    <p>Some older adults also do better with a BMI a bit above the youthful "ideal," partly because extra reserve and preserved mass can be protective. That does not mean obesity is harmless. It means reflexively chasing 22 at age 68 can be the wrong project.</p>
+    <p>This is exactly why I pair BMI with the <a href="/healthy-weight-range">healthy weight range calculator</a> and, when needed, a <a href="/body-fat-calculator">body fat estimate</a>. The trio answers questions BMI cannot finish alone.</p>
+    <p>Ask a better question than "Is overweight bad?" Ask "Overweight with what waist, what fitness, and what labs?" That is the conversation that changes care.</p>
+
+    <h2 id="how-i-use-it">How I actually use BMI in practice</h2>
+    <p>BMI is a door, not a destination. High or rising? I look at waist, blood pressure, glucose or A1c, lipids, and lifestyle. Low or falling without trying? I look for illness, under-fueling, or muscle loss.</p>
+    <p>Between about 18.5 and 24.9 with a healthy waist, stable strength, and good labs, most adults can stop agonizing over decimal points. Outside that band, get curious — not panicked. Curiosity leads to better measurements. Panic leads to crash diets.</p>
+    <p>And please stop comparing your BMI to a celebrity's edited photo. You do not have their photographer, their pharmacologic shortcuts, or their full medical chart.</p>
+
+    <h2 id="what-to-do-next">What to do with your number today</h2>
+    <p>Calculate BMI. Measure waist at the navel. If both look reassuring, keep training and eating in a way you can sustain, and stop refreshing calculators for entertainment. If BMI is high and waist is high, that is a stronger signal to change intake and movement than BMI alone.</p>
+    <p>If BMI is high and waist is fine — common in lifters — shift attention to performance and body fat rather than forcing the ratio down. If BMI is "normal" and waist is not, treat the waist as the adult in the room. That mismatch is exactly when patients get false reassurance from a single friendly number.</p>
+    <p>Bring the printout to your clinician if anything is drifting fast. A rising BMI with thirst, fatigue, or family history of diabetes deserves labs sooner, not after another year of hoping the chart will renegotiate.</p>
+
+    <h2 id="bottom-line">The bottom line</h2>
+    <p>A good BMI is usually 18.5 to 24.9, with real exceptions for muscle, age, and fat distribution. Use the <a href="/bmi-calculator">BMI calculator</a> for the number, the <a href="/healthy-weight-range">healthy weight range tool</a> for a frame-aware window, and your waist plus labs for the truth. The best BMI is the one that matches a body you can keep strong and metabolically quiet — not the one that wins an argument with a chart.</p>
+  `,
+  faq: [
+    {
+      question: "What is a good BMI?",
+      answer:
+        "For most adults, 18.5 to 24.9 is considered the normal range. A \"good\" BMI still needs context from waist size, muscle mass, age, sex, and metabolic labs.",
+    },
+    {
+      question: "Is a BMI of 25 bad?",
+      answer:
+        "Not automatically. It sits at the overweight threshold, but a muscular or metabolically healthy person at 25 may have low risk, while someone at 23 with a large waist may not. Look past the single number.",
+    },
+    {
+      question: "Can you be unhealthy with a normal BMI?",
+      answer:
+        "Yes. Central fat, low muscle, poor fitness, and abnormal labs can exist inside a normal BMI. Waist circumference and body composition help catch what BMI misses.",
+    },
+    {
+      question: "Should athletes use BMI?",
+      answer:
+        "Cautiously. Athletes often score overweight because of muscle. Body fat percentage and performance measures are usually more useful for that group.",
+    },
+  ],
+});
