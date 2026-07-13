@@ -48,6 +48,15 @@ export default function BlogIndexPage() {
           <BlogCard key={post.slug} post={post} />
         ))}
       </div>
+
+      <p className="mt-12 pt-8 border-t border-ivory-300 text-sm text-ink-500">
+        <Link
+          href="/pinterest"
+          className="hover:text-gold-600 transition-colors duration-200"
+        >
+          Pinterest-ready infographics →
+        </Link>
+      </p>
     </main>
   );
 }

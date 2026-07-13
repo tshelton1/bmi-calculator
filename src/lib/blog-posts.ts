@@ -32,6 +32,8 @@ export type BlogPost = {
   relatedCalculators: RelatedCalculator[];
   /** OG image path (Pinterest infographic doubles as the share image). */
   ogImage: string;
+  /** Four Pinterest infographic fact rows (headline ≤8 words, detail ≤20 words). */
+  pinterestFacts?: { headline: string; detail: string }[];
 };
 
 // Real calculator routes on this site. NOTE: TDEE is served by
@@ -137,6 +139,12 @@ POSTS.push({
   dateReviewed: TODAY,
   ogImage: "/infographics/bmi-for-women-over-40",
   relatedCalculators: [CALC.bmi, CALC.bodyFat, CALC.weightRange],
+  pinterestFacts: [
+    { headline: "BMI Ignores Fat Location", detail: "Same BMI can mean hip fat or visceral fat — menopause shifts storage toward the abdomen." },
+    { headline: "Muscle Loss Hides Risk", detail: "Losing muscle while gaining fat can keep BMI stable even as composition worsens." },
+    { headline: "Waist Beats BMI Alone", detail: "For women over 40, waist under 35 inches often predicts risk better than BMI." },
+    { headline: "Track Strength and Labs", detail: "Pair BMI with grip strength, glucose, lipids, and thyroid when midlife weight shifts." },
+  ],
   contentHtml: `
     <p>Here is a visit I have more often than almost any other. A woman in her late forties sits down, frustrated, and tells me her weight has barely moved in five years — but her body feels like a stranger's. The waistband that used to lie flat now folds over. Her middle has thickened. And her BMI still reads "normal," which somehow makes it worse: the number insists nothing is wrong when she knows perfectly well that something is.</p>
     <p>She is right — something has changed.</p>
@@ -222,6 +230,12 @@ POSTS.push({
   dateReviewed: TODAY,
   ogImage: "/infographics/bmi-vs-body-fat-percentage",
   relatedCalculators: [CALC.bmi, CALC.bodyFat, CALC.weightRange],
+  pinterestFacts: [
+    { headline: "BMI Is Only a Ratio", detail: "Weight divided by height squared cannot distinguish muscle from fat at all." },
+    { headline: "Body Fat Shows Composition", detail: "Body fat percentage estimates how much of your mass is fat versus lean tissue." },
+    { headline: "Athletes Skew BMI High", detail: "Dense muscle raises BMI into overweight territory without raising metabolic risk." },
+    { headline: "Use Both When Unsure", detail: "Screen with BMI, then confirm with body fat, waist, and clinical context." },
+  ],
   contentHtml: `
     <p>Years ago a patient sat across from me, genuinely angry, holding two pieces of paper. His doctor's chart labeled him overweight. His body fat scan, done the same month, put him in the athletic range. He wanted to know which one was lying.</p>
     <p>Neither one was lying.</p>
@@ -311,6 +325,12 @@ POSTS.push({
   dateReviewed: TODAY,
   ogImage: "/infographics/what-does-bmi-of-25-mean",
   relatedCalculators: [CALC.bmi, CALC.bodyFat, CALC.weightRange],
+  pinterestFacts: [
+    { headline: "Twenty-Five Is the Threshold", detail: "BMI 25 marks the start of the overweight category on standard adult charts." },
+    { headline: "Not an Automatic Diagnosis", detail: "One point on the chart is a flag for context, not proof of illness." },
+    { headline: "Muscle Can Push You Over", detail: "Lifters and athletes often sit near 25 simply because muscle is dense." },
+    { headline: "Check Waist Next", detail: "Measure waist and labs before treating 25 as a weight-loss emergency." },
+  ],
   contentHtml: `
     <p>No single BMI value produces more worry in my office than 25. It is the exact spot where the chart flips its label from "normal" to "overweight," so a patient can gain one pound, tick from 24.9 to 25.0, and walk in convinced their health changed overnight.</p>
     <p>It did not.</p>
@@ -399,6 +419,12 @@ POSTS.push({
   dateReviewed: TODAY,
   ogImage: "/infographics/how-to-calculate-tdee",
   relatedCalculators: [CALC.tdee, CALC.bmr, CALC.macros],
+  pinterestFacts: [
+    { headline: "TDEE Is Total Daily Burn", detail: "It estimates calories used at rest plus activity across a typical day." },
+    { headline: "Start From Your BMR", detail: "Basal rate is multiplied by an activity factor to reach TDEE." },
+    { headline: "Weight Goals Need TDEE", detail: "A deficit or surplus only makes sense relative to true daily expenditure." },
+    { headline: "Recalculate as You Change", detail: "Losing weight or changing activity shifts TDEE — update the estimate." },
+  ],
   contentHtml: `
     <p>If I could hand every patient one number about their body, it would not be their BMI. It would be their TDEE.</p>
     <p>Total Daily Energy Expenditure is how much energy you burn in a day, and it is the anchor for every sensible weight goal there is. Eat below it, you lose. Eat above it, you gain. And nearly every stalled diet I have watched up close traces back to the same mistake — the person guessed at this number instead of estimating it honestly.</p>
@@ -493,6 +519,12 @@ POSTS.push({
   dateReviewed: TODAY,
   ogImage: "/infographics/navy-body-fat-method-explained",
   relatedCalculators: [CALC.bodyFat, CALC.bmi, CALC.weightRange],
+  pinterestFacts: [
+    { headline: "Tape Measure, Not Calipers", detail: "The Navy method uses height and circumferences to estimate body fat percent." },
+    { headline: "Sex-Specific Formulas", detail: "Men and women use different sites because fat distribution patterns differ." },
+    { headline: "Good Enough for Trends", detail: "It is practical at home, though DEXA remains more precise clinically." },
+    { headline: "Consistency Beats Perfection", detail: "Measure the same way each time to track real composition changes." },
+  ],
   contentHtml: `
     <p>Not everyone can walk into a lab for a DEXA scan — and, honestly, most people do not need to. The US Navy hit that same wall decades ago, just at a staggering scale: how do you assess the body composition of hundreds of thousands of sailors, cheaply, consistently, without a lab anywhere in sight? Their answer was a formula that needs nothing but a tape measure, and it is still one of the most practical body fat tools going.</p>
 
@@ -579,6 +611,12 @@ POSTS.push({
   dateReviewed: TODAY,
   ogImage: "/infographics/bmr-explained",
   relatedCalculators: [CALC.bmr, CALC.tdee, CALC.macros],
+  pinterestFacts: [
+    { headline: "BMR Is Resting Burn", detail: "Basal metabolic rate is calories your body uses at complete rest." },
+    { headline: "Muscle Raises BMR", detail: "Lean mass is metabolically costly, so preserving it protects daily burn." },
+    { headline: "Never Eat Below BMR Long", detail: "Chronic intake far under BMR risks fatigue, muscle loss, and rebound hunger." },
+    { headline: "BMR Is Not Your Target", detail: "Daily needs include activity — use TDEE for meal planning, not BMR alone." },
+  ],
   contentHtml: `
     <p>Here is something that surprises almost every patient I explain it to: most of the calories you burn today, you will burn doing nothing at all.</p>
     <p>Sitting. Sleeping. Simply staying alive. For a typical person, that accounts for 60 to 70 percent of daily energy use. That baseline has a name — your Basal Metabolic Rate — and it is where any honest conversation about weight has to start, because it explains why the scale climbs, drops, or sits stubbornly still.</p>
@@ -667,6 +705,12 @@ POSTS.push({
   dateReviewed: TODAY,
   ogImage: "/infographics/macros-for-weight-loss",
   relatedCalculators: [CALC.macros, CALC.tdee, CALC.bmr],
+  pinterestFacts: [
+    { headline: "Calories Still Drive Loss", detail: "Macros help adherence and muscle retention, but the deficit moves the scale." },
+    { headline: "Prioritize Protein First", detail: "Higher protein preserves lean mass and satiety while calories are reduced." },
+    { headline: "Fat Supports Hormones", detail: "Keep dietary fat adequate rather than cutting it to near zero." },
+    { headline: "Carbs Are Flexible Fuel", detail: "Fill remaining calories with carbs that fit training and preference." },
+  ],
   contentHtml: `
     <p>Patients walk in convinced that counting macros is some obsessive spreadsheet ritual reserved for bodybuilders.</p>
     <p>It is not.</p>
@@ -760,6 +804,12 @@ POSTS.push({
   dateReviewed: TODAY,
   ogImage: "/infographics/healthy-bmi-range-by-age",
   relatedCalculators: [CALC.bmi, CALC.bodyFat, CALC.weightRange],
+  pinterestFacts: [
+    { headline: "Cutoffs Are Not Age-Adjusted", detail: "Standard adult BMI bands ignore how muscle and bone change with age." },
+    { headline: "Younger Adults Fit Charts Best", detail: "In your twenties, BMI tracks risk more cleanly than later decades." },
+    { headline: "Older Adults Need Nuance", detail: "Slightly higher BMI can reflect reserve; very low BMI raises frailty concern." },
+    { headline: "Always Pair With Waist", detail: "Age-aware reading means BMI plus waist, strength, and metabolic labs." },
+  ],
   contentHtml: `
     <p>Ask most people what a healthy BMI is and you will get the same answer, recited like a fact of nature: 18.5 to 24.9.</p>
     <p>It does not matter whether they are 25 or 75.</p>
@@ -841,6 +891,12 @@ POSTS.push({
   dateReviewed: TODAY,
   ogImage: "/infographics/how-to-lose-weight-with-bmi-calculator",
   relatedCalculators: [CALC.bmi, CALC.tdee, CALC.weightRange],
+  pinterestFacts: [
+    { headline: "BMI Sets a Direction", detail: "Use BMI to estimate a healthier target range, not a crash destination." },
+    { headline: "Translate Range Into Pounds", detail: "Convert a realistic BMI goal into a weekly loss plan you can sustain." },
+    { headline: "Match Intake to TDEE", detail: "A modest calorie deficit from TDEE beats aggressive restriction." },
+    { headline: "Recheck, Do Not Obsess", detail: "Update BMI as weight changes; track waist and energy too." },
+  ],
   contentHtml: `
     <p>Most people open a BMI calculator once, read the label, and close the tab.</p>
     <p>That is a waste of a genuinely useful tool. Run it in reverse and it becomes one of the best goal-setting instruments you have. Stop asking "what is my BMI?" and start asking "what weight would put me at the BMI I want?" — and just like that, you have a concrete, personal target instead of a fuzzy wish to "lose some weight."</p>
@@ -928,6 +984,12 @@ POSTS.push({
   dateReviewed: TODAY,
   ogImage: "/infographics/body-fat-percentage-by-age-and-sex",
   relatedCalculators: [CALC.bodyFat, CALC.bmi, CALC.weightRange],
+  pinterestFacts: [
+    { headline: "Healthy Ranges Differ by Sex", detail: "Women carry more essential fat than men; charts reflect that biology." },
+    { headline: "Age Shifts Acceptable Bands", detail: "Body fat norms widen slightly with age as lean mass declines." },
+    { headline: "Essential Fat Is Not Optional", detail: "Dropping too low impairs hormones, immunity, and reproductive health." },
+    { headline: "Percent Beats Scale Alone", detail: "Two people at one weight can have very different fat percentages." },
+  ],
   contentHtml: `
     <p>When a patient tells me their body fat percentage, my next two questions are always the same. How old are you? And what is your sex?</p>
     <p>Without those, the number barely means anything.</p>
@@ -1010,6 +1072,12 @@ POSTS.push({
   dateReviewed: TODAY,
   ogImage: "/infographics/calorie-deficit-for-weight-loss",
   relatedCalculators: [CALC.tdee, CALC.bmr, CALC.macros],
+  pinterestFacts: [
+    { headline: "Modest Beats Extreme", detail: "About 300–500 calories below TDEE is sustainable for most adults." },
+    { headline: "Bigger Is Not Faster Forever", detail: "Aggressive deficits raise hunger, fatigue, and muscle-loss risk." },
+    { headline: "Protein Protects the Deficit", detail: "Keep protein high so the weight you lose is mostly fat." },
+    { headline: "Adjust When Progress Stalls", detail: "As weight drops, TDEE falls — recalculate rather than slash harder." },
+  ],
   contentHtml: `
     <p>The logic feels airtight. If a small calorie deficit produces slow weight loss, a big one should produce fast weight loss.</p>
     <p>So patients arrive having slashed their intake, baffled that the scale stalled and they feel awful. Here is the part the "just eat less" advice leaves out: deficit size is a balancing act. Too small and nothing moves. Too large and your body pushes back — hard. Getting it right is one of the most important calls in the whole plan.</p>
@@ -1099,6 +1167,12 @@ POSTS.push({
   dateReviewed: TODAY,
   ogImage: "/infographics/bmi-limitations-and-alternatives",
   relatedCalculators: [CALC.bmi, CALC.bodyFat, CALC.weightRange],
+  pinterestFacts: [
+    { headline: "BMI Cannot See Muscle", detail: "It mislabels muscular people as overweight and misses skinny-fat patterns." },
+    { headline: "Fat Location Matters More", detail: "Visceral abdominal fat drives risk that BMI cannot locate." },
+    { headline: "Waist Is a Strong Pair", detail: "Waist circumference and waist-to-height ratio add clinical clarity fast." },
+    { headline: "Body Fat Fills the Gap", detail: "Composition estimates and labs complete what a single ratio cannot." },
+  ],
   contentHtml: `
     <p>BMI has hung around for nearly two centuries for one honest reason: it is simple, free, and good enough for screening large populations.</p>
     <p>But "good enough for populations" and "accurate for an individual" are not the same sentence, and I spend a real chunk of my week explaining the difference. So I will say it plainly — as a measure of one person's health, BMI has serious limitations. Here are the five that matter most in practice, and the tools I actually reach for instead.</p>
@@ -1183,6 +1257,12 @@ POSTS.push({
   dateReviewed: "2026-07-10",
   ogImage: "/infographics/how-to-calculate-macros-for-weight-loss",
   relatedCalculators: [CALC.macros, CALC.tdee, CALC.bmr],
+  pinterestFacts: [
+    { headline: "Step One: Find Calories", detail: "Estimate TDEE, then set a modest deficit before assigning macros." },
+    { headline: "Set Protein From Body Weight", detail: "Anchor protein first — typically higher during intentional fat loss." },
+    { headline: "Assign Fat Next", detail: "Choose a fat target that supports hormones and food satisfaction." },
+    { headline: "Fill Remaining With Carbs", detail: "Carbs take leftover calories after protein and fat are set." },
+  ],
   contentHtml: `
     <p>Ever set a calorie goal, hit it for weeks, and still felt soft, hungry, and stuck?</p>
     <p>That is usually not a willpower problem. It is a math order problem.</p>
@@ -1303,6 +1383,12 @@ POSTS.push({
   dateReviewed: "2026-07-10",
   ogImage: "/infographics/bmr-vs-tdee-for-fat-loss",
   relatedCalculators: [CALC.bmr, CALC.tdee, CALC.macros],
+  pinterestFacts: [
+    { headline: "BMR Is the Floor", detail: "It is resting burn only — not what you should eat on active days." },
+    { headline: "TDEE Guides Daily Intake", detail: "Total expenditure including movement is the number for meal planning." },
+    { headline: "Deficit From TDEE, Not BMR", detail: "Cutting from BMR alone often underfuels and backfires." },
+    { headline: "Know Both Numbers", detail: "BMR explains metabolism; TDEE sets the practical calorie target." },
+  ],
   contentHtml: `
     <p>Confused about whether to eat below your BMR or your TDEE?</p>
     <p>You are not alone. Those two acronyms get tossed around like they mean the same thing. They do not.</p>
@@ -1416,6 +1502,12 @@ POSTS.push({
   dateReviewed: "2026-07-10",
   ogImage: "/infographics/eighty-twenty-rule-flexible-dieting",
   relatedCalculators: [CALC.macros, CALC.tdee, CALC.bmi],
+  pinterestFacts: [
+    { headline: "Eighty Percent Nutrient Dense", detail: "Most calories come from protein, produce, whole grains, and basic fats." },
+    { headline: "Twenty Percent Fun Foods", detail: "Room for favorites keeps adherence without all-or-nothing collapse." },
+    { headline: "Calories Still Must Add Up", detail: "Flexibility works only if weekly intake stays near your target." },
+    { headline: "Protein Remains Nonnegotiable", detail: "Hit protein and calories first; then spend the flexible share." },
+  ],
   contentHtml: `
     <p>Do you fall off your diet the second pizza night shows up?</p>
     <p>That all or nothing pattern is why a lot of "perfect" meal plans fail. Flexible dieting uses a simpler idea: hit your numbers most of the time, and leave room for foods you actually like.</p>
@@ -1517,6 +1609,12 @@ POSTS.push({
   dateReviewed: "2026-07-13",
   ogImage: "/infographics/what-is-a-healthy-weight-for-my-height",
   relatedCalculators: [CALC.weightRange, CALC.bmi, CALC.bodyFat],
+  pinterestFacts: [
+    { headline: "Height Sets a Pound Range", detail: "Healthy weight is a window for your height, not one magic number." },
+    { headline: "Frame and Muscle Matter", detail: "Bone structure and lean mass shift where you feel and function best." },
+    { headline: "BMI Is a Starting Map", detail: "Convert height into BMI-based ranges, then refine with waist and strength." },
+    { headline: "Health Beats Aesthetics", detail: "Labs, energy, and strength decide if a weight is truly healthy." },
+  ],
   contentHtml: `
     <p>A healthy weight for your height is almost never one number. It is a range — and for most adults, that range is wider than the chart on the clinic wall suggests.</p>
     <p>Patients ask me this every week, often with a printout or a screenshot in hand. What they want is a target. What they need is context: bone frame, muscle, where fat sits, age, and what their labs are doing. Without those, a height-weight table is just arithmetic dressed up as destiny.</p>
@@ -1586,6 +1684,12 @@ POSTS.push({
   dateReviewed: "2026-07-12",
   ogImage: "/infographics/how-many-calories-should-i-eat-a-day",
   relatedCalculators: [CALC.tdee, CALC.bmr, CALC.macros],
+  pinterestFacts: [
+    { headline: "Two Thousand Is Not Universal", detail: "Daily needs depend on size, sex, age, and real activity level." },
+    { headline: "Estimate TDEE First", detail: "Personal expenditure beats generic food-label calorie defaults." },
+    { headline: "Match Intake to Your Goal", detail: "Maintain near TDEE; create a modest gap to lose or gain." },
+    { headline: "Update After Body Changes", detail: "Weight loss and new training both change how many calories you need." },
+  ],
   contentHtml: `
     <p>Most adults should not eat 2,000 calories a day just because the label said so. That figure is a regulatory average for general food labeling — not a personalized target for you.</p>
     <p>In clinic, I meet people who have been stuck for months because they treated 2,000 like a medical order. Some need closer to 1,600 to lose fat. Others maintain closer to 2,600 and wonder why "eating right" still leaves them exhausted. The right daily number starts with your body, not the side of a cereal box.</p>
@@ -1661,6 +1765,12 @@ POSTS.push({
   dateReviewed: "2026-07-11",
   ogImage: "/infographics/healthy-body-fat-percentage-for-women",
   relatedCalculators: [CALC.bodyFat, CALC.bmi, CALC.weightRange],
+  pinterestFacts: [
+    { headline: "Women Need More Essential Fat", detail: "Healthy female ranges sit higher than male ranges by design." },
+    { headline: "Fitness Categories Vary Widely", detail: "Athletic, average, and higher ranges serve different ages and goals." },
+    { headline: "Too Low Disrupts Hormones", detail: "Very low body fat can impair cycles, bone health, and recovery." },
+    { headline: "Trend the Number Over Time", detail: "Direction and waist matter more than chasing a single ideal percent." },
+  ],
   contentHtml: `
     <p>A healthy body fat percentage for most adult women lands roughly in the low-to-mid 20s through the low 30s, depending on age and sport — not the single-digit numbers social media pretends are normal.</p>
     <p>Women carry more essential fat than men for reproductive and hormonal function. Chasing a male athlete's look is not discipline. It is often a setup for fatigue, cycle disruption, and injury. In clinic I care less about a flattering mirror selfie and more about whether fat mass, strength, and labs tell a coherent story.</p>
@@ -1731,6 +1841,12 @@ POSTS.push({
   dateReviewed: "2026-07-10",
   ogImage: "/infographics/how-much-protein-do-i-need-per-day",
   relatedCalculators: [CALC.macros, CALC.tdee, CALC.bmr],
+  pinterestFacts: [
+    { headline: "RDA Is a Minimum Floor", detail: "The old RDA prevents deficiency; active adults often need more." },
+    { headline: "Higher Targets Aid Fat Loss", detail: "Extra protein preserves muscle and satiety in a calorie deficit." },
+    { headline: "Spread Intake Across Meals", detail: "About 25–40 grams per meal supports muscle protein synthesis." },
+    { headline: "Food First, Powder Optional", detail: "Whole-food protein works; supplements are convenience, not required." },
+  ],
   contentHtml: `
     <p>Most active adults — and nearly everyone over 50 — need more protein per day than the old 0.8 grams per kilogram RDA. That number was built to prevent frank deficiency in sedentary populations, not to protect muscle during fat loss or aging.</p>
     <p>In clinic, protein under-eating is one of the quietest problems I see. People cut calories, keep carbs and convenience foods, and wonder why they feel flat, recover poorly, and lose strength along with the weight. The deficit did its job. The protein intake did not.</p>
@@ -1800,6 +1916,12 @@ POSTS.push({
   dateReviewed: "2026-07-09",
   ogImage: "/infographics/what-is-a-good-bmi",
   relatedCalculators: [CALC.bmi, CALC.weightRange, CALC.bodyFat],
+  pinterestFacts: [
+    { headline: "Normal Range Runs 18.5 to 24.9", detail: "For most adults, 18.5–24.9 is labeled normal on standard charts." },
+    { headline: "Normal Can Still Hide Risk", detail: "Central fat and poor labs can exist inside a friendly BMI." },
+    { headline: "Overweight Is Not Always Risk", detail: "Muscle and healthy waist can make a higher BMI clinically fine." },
+    { headline: "Use BMI as a Door", detail: "Let the number prompt waist, strength, and lab checks — not panic." },
+  ],
   contentHtml: `
     <p>A good BMI for most adults lands between 18.5 and 24.9 — that is the textbook answer. It is also incomplete without age, sex, muscle mass, and waist size sitting next to it.</p>
     <p>I use BMI every week. I do not worship it. Patients who treat 24.9 like a cliff and 25.0 like a verdict are fighting a screening tool as if it were a diagnosis. That anxiety helps no one.</p>
