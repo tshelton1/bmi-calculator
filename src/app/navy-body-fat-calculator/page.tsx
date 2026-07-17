@@ -245,40 +245,52 @@ export default function NavyBodyFatCalculatorPage() {
           <h2 className="font-display text-2xl md:text-3xl font-medium text-ink-900 tracking-display mb-4">
             Frequently Asked Questions
           </h2>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Why do the male and female Navy formulas differ?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            Average fat distribution differs by sex. The female equation
-            includes hip circumference to account for more gluteal and hip
-            storage. Using the wrong sex equation or skipping hips for women
-            produces a less meaningful estimate.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Can I use centimeters instead of inches?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            This tool is built for inches to match the equation constants shown
-            on the page. If you measure in centimeters, convert to inches before
-            entering values, or your result will not match the intended formula.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            How should I interpret the category label?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            Categories are population-style guides by sex. They help you locate
-            a result on a familiar map. They are not diagnoses and they are not
-            comments on character. Pair the label with how you feel, train, and
-            trend over time.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Does a Navy body fat result replace medical care?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed">
-            No. It is a general educational estimate. Rapid weight change,
-            suspected hormone issues, or disordered eating need personalized
-            clinical care beyond any tape-measure formula.
-          </p>
+          <Accordion
+            items={[
+            {
+              question: "Why do the male and female Navy formulas differ?",
+              answer: (
+                <p className="tracking-wide">
+                  Average fat distribution differs by sex. The female equation includes
+                  hip circumference to account for more gluteal and hip storage. Using the
+                  wrong sex equation or skipping hips for women produces a less meaningful
+                  estimate.
+                </p>
+              ),
+            },
+            {
+              question: "Can I use centimeters instead of inches?",
+              answer: (
+                <p className="tracking-wide">
+                  This tool is built for inches to match the equation constants shown on
+                  the page. If you measure in centimeters, convert to inches before
+                  entering values, or your result will not match the intended formula.
+                </p>
+              ),
+            },
+            {
+              question: "How should I interpret the category label?",
+              answer: (
+                <p className="tracking-wide">
+                  Categories are population-style guides by sex. They help you locate a
+                  result on a familiar map. They are not diagnoses and they are not
+                  comments on character. Pair the label with how you feel, train, and
+                  trend over time.
+                </p>
+              ),
+            },
+            {
+              question: "Does a Navy body fat result replace medical care?",
+              answer: (
+                <p className="tracking-wide">
+                  No. It is a general educational estimate. Rapid weight change, suspected
+                  hormone issues, or disordered eating need personalized clinical care
+                  beyond any tape-measure formula.
+                </p>
+              ),
+            },
+            ]}
+          />
         </div>
       </section>
 

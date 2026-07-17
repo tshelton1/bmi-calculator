@@ -120,41 +120,53 @@ export default function CalorieCalculatorPage() {
           <h2 className="font-display text-2xl md:text-3xl font-medium text-ink-900 tracking-display mb-4">
             Frequently Asked Questions
           </h2>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            What if the scale does not move on my TDEE-based plan?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            First verify portions and weekends. Then consider lowering the
-            activity setting one notch. Many people are less active than they
-            believe. Only after honest tracking for a couple of weeks should you
-            shrink calories further.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Should I eat back every calorie my watch says I burned?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            Usually not fully. If your activity multiplier already includes
-            typical exercise, eating back tracked burn often double-counts.
-            Wearables also tend to overestimate expenditure. Use workouts to
-            guide training quality more than exact calorie refunds.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            How big should a deficit be?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            A moderate gap is easier to sustain and kinder to muscle than an
-            extreme cut. Exact targets depend on starting size, health status,
-            and how you feel in daily life. If energy, mood, or menstrual cycles
-            deteriorate, the plan is too aggressive.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Is TDEE personalized medical advice?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed">
-            No. This tool provides general estimates for education. People with
-            diabetes, history of disordered eating, pregnancy, or complex
-            medication regimens need clinician-guided targets.
-          </p>
+          <Accordion
+            items={[
+            {
+              question: "What if the scale does not move on my TDEE-based plan?",
+              answer: (
+                <p className="tracking-wide">
+                  First verify portions and weekends. Then consider lowering the activity
+                  setting one notch. Many people are less active than they believe. Only
+                  after honest tracking for a couple of weeks should you shrink calories
+                  further.
+                </p>
+              ),
+            },
+            {
+              question: "Should I eat back every calorie my watch says I burned?",
+              answer: (
+                <p className="tracking-wide">
+                  Usually not fully. If your activity multiplier already includes typical
+                  exercise, eating back tracked burn often double-counts. Wearables also
+                  tend to overestimate expenditure. Use workouts to guide training quality
+                  more than exact calorie refunds.
+                </p>
+              ),
+            },
+            {
+              question: "How big should a deficit be?",
+              answer: (
+                <p className="tracking-wide">
+                  A moderate gap is easier to sustain and kinder to muscle than an extreme
+                  cut. Exact targets depend on starting size, health status, and how you
+                  feel in daily life. If energy, mood, or menstrual cycles deteriorate,
+                  the plan is too aggressive.
+                </p>
+              ),
+            },
+            {
+              question: "Is TDEE personalized medical advice?",
+              answer: (
+                <p className="tracking-wide">
+                  No. This tool provides general estimates for education. People with
+                  diabetes, history of disordered eating, pregnancy, or complex medication
+                  regimens need clinician-guided targets.
+                </p>
+              ),
+            },
+            ]}
+          />
         </div>
       </section>
 

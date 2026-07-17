@@ -104,44 +104,54 @@ export default function HealthyWeightRangePage() {
           <h2 className="font-display text-2xl md:text-3xl font-medium text-ink-900 tracking-display mb-4">
             Frequently Asked Questions
           </h2>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Why show a range instead of one ideal weight?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            Bodies fluctuate with water, hormones, training, and food. A
-            several-pound window is more honest than a single target that
-            collapses under normal life. Health also depends on where fat sits
-            and how strong you are, not only on one scale reading.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Is wrist size enough to define my frame?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            It is a useful home estimate, not a perfect anthropometric panel.
-            Elbow breadth and clinical exam are more formal methods. Wrist
-            circumference is included here because it is accessible and still
-            helps many people interpret where they sit inside a height-based
-            band.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            What if my best weight sits above the healthy BMI band?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            Muscular adults and some older adults may function well a bit above
-            youthful BMI ideals. If waist is calm, strength is solid, and labs
-            are quiet, chasing a lower chart number can cost muscle you need.
-            Discuss your individual target with a clinician when health
-            conditions are present.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Can this replace a visit for weight concerns?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed">
-            No. This is educational guidance reviewed in a physician context,
-            not a diagnosis or treatment plan. Pregnancy, eating disorders,
-            medication effects, and unexplained weight change need personalized
-            care.
-          </p>
+          <Accordion
+            items={[
+            {
+              question: "Why show a range instead of one ideal weight?",
+              answer: (
+                <p className="tracking-wide">
+                  Bodies fluctuate with water, hormones, training, and food. A
+                  several-pound window is more honest than a single target that collapses
+                  under normal life. Health also depends on where fat sits and how strong
+                  you are, not only on one scale reading.
+                </p>
+              ),
+            },
+            {
+              question: "Is wrist size enough to define my frame?",
+              answer: (
+                <p className="tracking-wide">
+                  It is a useful home estimate, not a perfect anthropometric panel. Elbow
+                  breadth and clinical exam are more formal methods. Wrist circumference
+                  is included here because it is accessible and still helps many people
+                  interpret where they sit inside a height-based band.
+                </p>
+              ),
+            },
+            {
+              question: "What if my best weight sits above the healthy BMI band?",
+              answer: (
+                <p className="tracking-wide">
+                  Muscular adults and some older adults may function well a bit above
+                  youthful BMI ideals. If waist is calm, strength is solid, and labs are
+                  quiet, chasing a lower chart number can cost muscle you need. Discuss
+                  your individual target with a clinician when health conditions are
+                  present.
+                </p>
+              ),
+            },
+            {
+              question: "Can this replace a visit for weight concerns?",
+              answer: (
+                <p className="tracking-wide">
+                  No. This is educational guidance reviewed in a physician context, not a
+                  diagnosis or treatment plan. Pregnancy, eating disorders, medication
+                  effects, and unexplained weight change need personalized care.
+                </p>
+              ),
+            },
+            ]}
+          />
         </div>
       </section>
 

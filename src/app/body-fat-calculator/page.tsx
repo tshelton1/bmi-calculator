@@ -113,41 +113,53 @@ export default function BodyFatCalculatorPage() {
           <h2 className="font-display text-2xl md:text-3xl font-medium text-ink-900 tracking-display mb-4">
             Frequently Asked Questions
           </h2>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Why is my body fat estimate different from a smart scale?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            Bioelectrical impedance scales are sensitive to hydration, recent
-            food, and exercise. Circumference methods have different error
-            sources. Neither is DEXA. Pick one home method and repeat it the
-            same way so the trend is trustworthy.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            What is a healthy body fat percentage?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            Healthy bands differ by sex and shift with age and sport. Women
-            generally carry more essential fat than men. Essential fat is a
-            biological minimum, not a goal. Higher categories are descriptive
-            population labels, not judgments about worth.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Can athletes trust this more than BMI?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            Often yes for composition questions, because BMI cannot separate
-            muscle from fat. Circumference estimates still misread unusual
-            proportions, so elite athletes may still need more precise testing
-            when decisions are high stakes.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Is this a diagnosis of obesity or fitness?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed">
-            No. It is a general estimate for education and trend tracking. Body
-            composition concerns, rapid changes, or disordered eating patterns
-            deserve care from a clinician who knows your history.
-          </p>
+          <Accordion
+            items={[
+            {
+              question: "Why is my body fat estimate different from a smart scale?",
+              answer: (
+                <p className="tracking-wide">
+                  Bioelectrical impedance scales are sensitive to hydration, recent food,
+                  and exercise. Circumference methods have different error sources.
+                  Neither is DEXA. Pick one home method and repeat it the same way so the
+                  trend is trustworthy.
+                </p>
+              ),
+            },
+            {
+              question: "What is a healthy body fat percentage?",
+              answer: (
+                <p className="tracking-wide">
+                  Healthy bands differ by sex and shift with age and sport. Women
+                  generally carry more essential fat than men. Essential fat is a
+                  biological minimum, not a goal. Higher categories are descriptive
+                  population labels, not judgments about worth.
+                </p>
+              ),
+            },
+            {
+              question: "Can athletes trust this more than BMI?",
+              answer: (
+                <p className="tracking-wide">
+                  Often yes for composition questions, because BMI cannot separate muscle
+                  from fat. Circumference estimates still misread unusual proportions, so
+                  elite athletes may still need more precise testing when decisions are
+                  high stakes.
+                </p>
+              ),
+            },
+            {
+              question: "Is this a diagnosis of obesity or fitness?",
+              answer: (
+                <p className="tracking-wide">
+                  No. It is a general estimate for education and trend tracking. Body
+                  composition concerns, rapid changes, or disordered eating patterns
+                  deserve care from a clinician who knows your history.
+                </p>
+              ),
+            },
+            ]}
+          />
         </div>
       </section>
 

@@ -110,41 +110,52 @@ export default function BMRCalculatorPage() {
           <h2 className="font-display text-2xl md:text-3xl font-medium text-ink-900 tracking-display mb-4">
             Frequently Asked Questions
           </h2>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Should I eat only my BMR calories to lose weight?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            Usually no. Eating at or under BMR for long stretches often means
-            underfueling daily life, which can increase fatigue, muscle loss,
-            and rebound hunger. Better practice is to estimate TDEE, then create
-            a modest deficit from that higher number.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Why did my BMR drop after I lost weight?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            A smaller body generally costs less energy to maintain. Some lean
-            mass loss and adaptive changes can lower expenditure further.
-            Recalculate after meaningful weight change instead of clinging to an
-            old target.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Does building muscle raise BMR?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            Yes, lean tissue is metabolically active. Resistance training and
-            adequate protein help preserve or build muscle, which supports
-            resting burn over time. The day-to-day effect is meaningful but not
-            magical. Consistency beats extreme promises.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Is this result a medical diagnosis of my metabolism?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed">
-            No. It is an educational estimate. Persistent fatigue, unexplained
-            weight change, or suspected endocrine issues deserve clinical
-            evaluation rather than calculator troubleshooting alone.
-          </p>
+          <Accordion
+            items={[
+            {
+              question: "Should I eat only my BMR calories to lose weight?",
+              answer: (
+                <p className="tracking-wide">
+                  Usually no. Eating at or under BMR for long stretches often means
+                  underfueling daily life, which can increase fatigue, muscle loss, and
+                  rebound hunger. Better practice is to estimate TDEE, then create a
+                  modest deficit from that higher number.
+                </p>
+              ),
+            },
+            {
+              question: "Why did my BMR drop after I lost weight?",
+              answer: (
+                <p className="tracking-wide">
+                  A smaller body generally costs less energy to maintain. Some lean mass
+                  loss and adaptive changes can lower expenditure further. Recalculate
+                  after meaningful weight change instead of clinging to an old target.
+                </p>
+              ),
+            },
+            {
+              question: "Does building muscle raise BMR?",
+              answer: (
+                <p className="tracking-wide">
+                  Yes, lean tissue is metabolically active. Resistance training and
+                  adequate protein help preserve or build muscle, which supports resting
+                  burn over time. The day-to-day effect is meaningful but not magical.
+                  Consistency beats extreme promises.
+                </p>
+              ),
+            },
+            {
+              question: "Is this result a medical diagnosis of my metabolism?",
+              answer: (
+                <p className="tracking-wide">
+                  No. It is an educational estimate. Persistent fatigue, unexplained
+                  weight change, or suspected endocrine issues deserve clinical evaluation
+                  rather than calculator troubleshooting alone.
+                </p>
+              ),
+            },
+            ]}
+          />
         </div>
       </section>
 

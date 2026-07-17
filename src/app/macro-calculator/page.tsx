@@ -111,40 +111,51 @@ export default function MacroCalculatorPage() {
           <h2 className="font-display text-2xl md:text-3xl font-medium text-ink-900 tracking-display mb-4">
             Frequently Asked Questions
           </h2>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Do I need perfect macros every day?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            No. Weekly averages matter more than flawless daily hits. Aim for
-            consistency with protein and calories. A social meal that shifts
-            carbs or fat will not erase progress if the pattern stays intact.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Can I eat low carb or low fat with these targets?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            You can adjust the carb and fat split to preference as long as
-            protein and total calories remain appropriate and fat does not fall
-            so low that meals and hormones suffer. Extreme restriction of any
-            one macro is rarely required for health in generally well adults.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Why is protein higher during a cut?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            In a calorie deficit, the body is more likely to break down lean
-            tissue for energy. Higher protein plus resistance training reduces
-            that risk and helps you keep more of the weight you lose as fat.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Are these targets a prescription?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed">
-            No. They are general educational estimates. If you have metabolic
-            disease, food allergies, or a history of disordered eating, work
-            with a clinician or registered dietitian before locking in aggressive
-            targets.
-          </p>
+          <Accordion
+            items={[
+            {
+              question: "Do I need perfect macros every day?",
+              answer: (
+                <p className="tracking-wide">
+                  No. Weekly averages matter more than flawless daily hits. Aim for
+                  consistency with protein and calories. A social meal that shifts carbs
+                  or fat will not erase progress if the pattern stays intact.
+                </p>
+              ),
+            },
+            {
+              question: "Can I eat low carb or low fat with these targets?",
+              answer: (
+                <p className="tracking-wide">
+                  You can adjust the carb and fat split to preference as long as protein
+                  and total calories remain appropriate and fat does not fall so low that
+                  meals and hormones suffer. Extreme restriction of any one macro is
+                  rarely required for health in generally well adults.
+                </p>
+              ),
+            },
+            {
+              question: "Why is protein higher during a cut?",
+              answer: (
+                <p className="tracking-wide">
+                  In a calorie deficit, the body is more likely to break down lean tissue
+                  for energy. Higher protein plus resistance training reduces that risk
+                  and helps you keep more of the weight you lose as fat.
+                </p>
+              ),
+            },
+            {
+              question: "Are these targets a prescription?",
+              answer: (
+                <p className="tracking-wide">
+                  No. They are general educational estimates. If you have metabolic
+                  disease, food allergies, or a history of disordered eating, work with a
+                  clinician or registered dietitian before locking in aggressive targets.
+                </p>
+              ),
+            },
+            ]}
+          />
         </div>
       </section>
 

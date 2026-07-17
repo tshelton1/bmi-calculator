@@ -110,43 +110,54 @@ export default function BMICalculatorPage() {
           <h2 className="font-display text-2xl md:text-3xl font-medium text-ink-900 tracking-display mb-4">
             Frequently Asked Questions
           </h2>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Is a BMI in the overweight range always unhealthy?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            No. Overweight on BMI can reflect muscle, frame, or modest fat gain.
-            Health risk rises more clearly when BMI climbs alongside a large
-            waist, rising blood pressure, abnormal glucose, or low fitness. Use
-            the category as a prompt to gather more data, not as an automatic
-            diagnosis.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Why does my BMI look high when I feel fit?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            Dense muscle raises body weight without the same metabolic risk as
-            excess fat. Athletes and regular lifters are the classic example. If
-            that is you, compare BMI with waist size and body fat percentage
-            before cutting calories aggressively.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            How often should I check my BMI?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            Monthly or after a deliberate weight change is usually enough for
-            home tracking. Daily BMI adds noise from water, salt, and glycogen.
-            Trends matter more than a single morning.
-          </p>
-          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
-            Is this calculator medical advice?
-          </h3>
-          <p className="font-body text-base text-ink-700 leading-relaxed">
-            No. This is general education from my clinical perspective as a
-            physician. It cannot replace an exam, labs, or personalized guidance
-            for pregnancy, eating disorders, or complex medical conditions. If
-            your weight or appetite concerns you, talk with a clinician who
-            knows your history.
-          </p>
+          <Accordion
+            items={[
+            {
+              question: "Is a BMI in the overweight range always unhealthy?",
+              answer: (
+                <p className="tracking-wide">
+                  No. Overweight on BMI can reflect muscle, frame, or modest fat gain.
+                  Health risk rises more clearly when BMI climbs alongside a large waist,
+                  rising blood pressure, abnormal glucose, or low fitness. Use the
+                  category as a prompt to gather more data, not as an automatic diagnosis.
+                </p>
+              ),
+            },
+            {
+              question: "Why does my BMI look high when I feel fit?",
+              answer: (
+                <p className="tracking-wide">
+                  Dense muscle raises body weight without the same metabolic risk as
+                  excess fat. Athletes and regular lifters are the classic example. If
+                  that is you, compare BMI with waist size and body fat percentage before
+                  cutting calories aggressively.
+                </p>
+              ),
+            },
+            {
+              question: "How often should I check my BMI?",
+              answer: (
+                <p className="tracking-wide">
+                  Monthly or after a deliberate weight change is usually enough for home
+                  tracking. Daily BMI adds noise from water, salt, and glycogen. Trends
+                  matter more than a single morning.
+                </p>
+              ),
+            },
+            {
+              question: "Is this calculator medical advice?",
+              answer: (
+                <p className="tracking-wide">
+                  No. This is general education from my clinical perspective as a
+                  physician. It cannot replace an exam, labs, or personalized guidance for
+                  pregnancy, eating disorders, or complex medical conditions. If your
+                  weight or appetite concerns you, talk with a clinician who knows your
+                  history.
+                </p>
+              ),
+            },
+            ]}
+          />
         </div>
       </section>
 
