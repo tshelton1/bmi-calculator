@@ -27,6 +27,9 @@ const RESOURCE_ITEMS: NavItem[] = [
   { href: "/contact", label: "Contact" },
 ];
 
+const NAV_TEXT =
+  "font-body text-sm font-medium tracking-wide leading-none";
+
 function isActivePath(pathname: string | null, href: string) {
   return (
     pathname === href ||
@@ -93,21 +96,21 @@ function DesktopDropdown({
   return (
     <div
       ref={rootRef}
-      className="relative"
+      className="relative flex items-center"
       onMouseEnter={() => onOpenChange(true)}
       onMouseLeave={() => onOpenChange(false)}
     >
       <button
         type="button"
-        className={`inline-flex items-center gap-1.5 font-body text-sm font-medium tracking-wide whitespace-nowrap focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-500 ${topLinkClass(active || open)}`}
+        className={`inline-flex items-center gap-1.5 h-8 ${NAV_TEXT} whitespace-nowrap focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-500 ${topLinkClass(active || open)}`}
         aria-expanded={open}
         aria-haspopup="true"
         aria-controls={panelId}
         onClick={() => onOpenChange(!open)}
       >
-        {label}
+        <span className="leading-none">{label}</span>
         <svg
-          className={`w-3.5 h-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`w-3 h-3 shrink-0 translate-y-px transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           viewBox="0 0 20 20"
           fill="none"
           aria-hidden="true"
@@ -125,7 +128,7 @@ function DesktopDropdown({
       <div
         id={panelId}
         role="menu"
-        className={`absolute left-0 top-full pt-2 min-w-[13.5rem] transition-all duration-200 ease-out ${
+        className={`absolute left-0 top-full pt-3 min-w-[14rem] transition-all duration-200 ease-out ${
           open
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-1 pointer-events-none"
@@ -140,7 +143,7 @@ function DesktopDropdown({
                 href={item.href}
                 role="menuitem"
                 aria-current={itemActive ? "page" : undefined}
-                className={`block px-4 py-2.5 font-body text-sm font-medium tracking-wide transition-colors duration-200 ${menuItemClass(itemActive)}`}
+                className={`block px-4 py-2.5 ${NAV_TEXT} transition-colors duration-200 ${menuItemClass(itemActive)}`}
                 onClick={() => onOpenChange(false)}
               >
                 {item.label}
@@ -177,14 +180,14 @@ function MobileAccordion({
     <div className="border-b border-forest-800">
       <button
         type="button"
-        className={`w-full flex items-center justify-between py-3 font-body text-sm font-medium tracking-wide focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-500 ${topLinkClass(active)}`}
+        className={`w-full flex items-center justify-between h-12 ${NAV_TEXT} focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-500 ${topLinkClass(active)}`}
         aria-expanded={open}
         aria-controls={panelId}
         onClick={onToggle}
       >
-        {label}
+        <span className="leading-none">{label}</span>
         <svg
-          className={`w-4 h-4 text-gold-500 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`w-3.5 h-3.5 shrink-0 text-gold-500 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           viewBox="0 0 20 20"
           fill="none"
           aria-hidden="true"
@@ -212,7 +215,7 @@ function MobileAccordion({
                 key={item.href}
                 href={item.href}
                 aria-current={itemActive ? "page" : undefined}
-                className={`py-2.5 font-body text-sm font-medium tracking-wide transition-colors duration-200 ${
+                className={`py-2.5 ${NAV_TEXT} transition-colors duration-200 ${
                   itemActive
                     ? "text-gold-500"
                     : "text-forest-200 hover:text-gold-400"
@@ -232,12 +235,12 @@ function MobileAccordion({
 export default function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [desktopOpen, setDesktopOpen] = useState<"calculators" | "resources" | null>(
-    null
-  );
-  const [mobileOpen, setMobileOpen] = useState<"calculators" | "resources" | null>(
-    "calculators"
-  );
+  const [desktopOpen, setDesktopOpen] = useState<
+    "calculators" | "resources" | null
+  >(null);
+  const [mobileOpen, setMobileOpen] = useState<
+    "calculators" | "resources" | null
+  >("calculators");
   const menuId = useId();
   const blogActive = isActivePath(pathname, "/blog");
 
@@ -263,7 +266,7 @@ export default function SiteHeader() {
 
   return (
     <header className="border-b border-forest-700/60 bg-forest-900 relative z-40">
-      <div className="max-w-5xl mx-auto px-4 sm:px-5 h-16 flex items-center justify-between gap-3">
+      <div className="max-w-5xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
           <Image
             src="/branding/livinghealthier-logo.png"
@@ -279,7 +282,7 @@ export default function SiteHeader() {
         </Link>
 
         <nav
-          className="hidden md:flex items-center gap-6 font-body text-sm font-medium tracking-wide"
+          className="hidden md:flex items-center gap-x-8"
           aria-label="Primary"
         >
           <DesktopDropdown
@@ -294,7 +297,7 @@ export default function SiteHeader() {
           <Link
             href="/blog"
             aria-current={blogActive ? "page" : undefined}
-            className={`whitespace-nowrap ${topLinkClass(blogActive)}`}
+            className={`inline-flex items-center h-8 ${NAV_TEXT} whitespace-nowrap ${topLinkClass(blogActive)}`}
           >
             Blog
           </Link>
@@ -362,7 +365,7 @@ export default function SiteHeader() {
             aria-modal="true"
             aria-label="Site menu"
           >
-            <div className="max-w-5xl mx-auto px-5 py-4">
+            <div className="max-w-5xl mx-auto px-6 py-4">
               <MobileAccordion
                 label="Calculators"
                 items={CALCULATOR_ITEMS}
@@ -378,7 +381,7 @@ export default function SiteHeader() {
               <Link
                 href="/blog"
                 aria-current={blogActive ? "page" : undefined}
-                className={`block py-3 border-b border-forest-800 font-body text-sm font-medium tracking-wide ${topLinkClass(blogActive)}`}
+                className={`flex items-center h-12 border-b border-forest-800 ${NAV_TEXT} ${topLinkClass(blogActive)}`}
                 onClick={() => setMenuOpen(false)}
               >
                 Blog
