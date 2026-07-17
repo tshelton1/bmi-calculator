@@ -5,6 +5,9 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import HealthDisclaimer from "@/components/blog/HealthDisclaimer";
 import AuthorBio from "@/components/blog/AuthorBio";
 import { Accordion } from "@/components/ui/Accordion";
+import NavyBodyFatCalculatorTool from "@/components/tools/NavyBodyFatCalculatorTool";
+
+const NAVY_CALC_MARKER = "{{NAVY_BODY_FAT_CALCULATOR}}";
 
 // Emits a real HTML comment placeholder so ad placement is planned but inert.
 function AdSlot({ label }: { label: string }) {
@@ -44,6 +47,28 @@ function faqJsonLd(post: BlogPost) {
       acceptedAnswer: { "@type": "Answer", text: item.answer },
     })),
   };
+}
+
+function ArticleBody({ html }: { html: string }) {
+  if (!html.includes(NAVY_CALC_MARKER)) {
+    return (
+      <article
+        className="prose-sage"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    );
+  }
+
+  const [before, after] = html.split(NAVY_CALC_MARKER);
+  return (
+    <article className="prose-sage">
+      <div dangerouslySetInnerHTML={{ __html: before }} />
+      <div className="not-prose my-10">
+        <NavyBodyFatCalculatorTool embedded />
+      </div>
+      <div dangerouslySetInnerHTML={{ __html: after }} />
+    </article>
+  );
 }
 
 export default function BlogPostLayout({ post }: { post: BlogPost }) {
@@ -97,10 +122,7 @@ export default function BlogPostLayout({ post }: { post: BlogPost }) {
 
           <AdSlot label="in-article" />
 
-          <article
-            className="prose-sage"
-            dangerouslySetInnerHTML={{ __html: post.contentHtml }}
-          />
+          <ArticleBody html={post.contentHtml} />
 
           <AdSlot label="in-article" />
 

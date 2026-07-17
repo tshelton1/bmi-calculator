@@ -9,6 +9,7 @@ const CALCULATOR_LINKS = [
   { href: "/calorie-calculator", label: "Calorie Needs" },
   { href: "/macro-calculator", label: "Macro Calculator" },
   { href: "/body-fat-calculator", label: "Body Fat %" },
+  { href: "/navy-body-fat-calculator", label: "Navy Body Fat" },
 ] as const;
 
 const RESOURCE_LINKS = [

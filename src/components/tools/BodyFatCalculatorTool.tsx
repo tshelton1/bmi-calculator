@@ -35,7 +35,10 @@ export default function BodyFatCalculatorTool() {
       calculateBodyFatNavy(sex, heightInches, waistInches, neckInches, hipInches),
     [sex, heightInches, waistInches, neckInches, hipInches]
   );
-  const category = getBodyFatCategory(bodyFat, sex);
+  const category =
+    bodyFat != null && bodyFat > 0
+      ? getBodyFatCategory(bodyFat, sex)
+      : null;
   const categories = getBodyFatCategories(sex);
 
   return (
@@ -56,7 +59,7 @@ export default function BodyFatCalculatorTool() {
         </div>
       </div>
 
-      {hasInput && bodyFat > 0 ? (
+      {hasInput && bodyFat != null && bodyFat > 0 && category ? (
         <>
           <div className="bg-forest-900 border-l-2 border-gold-500 p-8 md:p-10">
             <p className="eyebrow text-forest-200 mb-2">Body fat estimate</p>

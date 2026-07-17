@@ -31,6 +31,10 @@ export const CALCULATOR_OG_IMAGES: Record<
     // path: "/images/og/macro-calculator.jpg",
     alt: "Macro Calculator — Living Healthier",
   },
+  "navy-body-fat-calculator": {
+    // path: "/images/og/navy-body-fat-calculator.jpg",
+    alt: "Navy Body Fat Calculator — Living Healthier",
+  },
 };
 
 type CalculatorOgSlug = keyof typeof CALCULATOR_OG_IMAGES;

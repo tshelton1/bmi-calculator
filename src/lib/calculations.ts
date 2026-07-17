@@ -177,34 +177,41 @@ export function calculateTDEE(bmr: number, activity: ActivityLevel): number {
   return Math.round(bmr * ACTIVITY_MULTIPLIERS[activity]);
 }
 
-// US Navy method for body fat % — uses circumference measurements (inches).
-// Requires waist + neck for men; waist + neck + hip for women.
+/**
+ * US Navy circumference body fat % formulas (inches, base-10 log).
+ * Male: 86.010 × log10(waist − neck) − 70.041 × log10(height) + 36.76
+ * Female: 163.205 × log10(waist + hip − neck) − 97.684 × log10(height) − 78.387
+ * Requires waist + neck for men; waist + neck + hip for women.
+ */
 export function calculateBodyFatNavy(
   sex: Sex,
   heightInches: number,
   waistInches: number,
   neckInches: number,
   hipInches?: number
-): number {
+): number | null {
   const log10 = (n: number) => Math.log(n) / Math.LN10;
+
+  if (heightInches <= 0 || waistInches <= 0 || neckInches <= 0) {
+    return null;
+  }
 
   let bodyFat: number;
   if (sex === "male") {
+    const diff = waistInches - neckInches;
+    if (diff <= 0) return null;
     bodyFat =
-      495 /
-        (1.0324 -
-          0.19077 * log10(waistInches - neckInches) +
-          0.15456 * log10(heightInches)) -
-      450;
+      86.01 * log10(diff) - 70.041 * log10(heightInches) + 36.76;
   } else {
     const hip = hipInches ?? 0;
+    if (hip <= 0) return null;
+    const sum = waistInches + hip - neckInches;
+    if (sum <= 0) return null;
     bodyFat =
-      495 /
-        (1.29579 -
-          0.35004 * log10(waistInches + hip - neckInches) +
-          0.22100 * log10(heightInches)) -
-      450;
+      163.205 * log10(sum) - 97.684 * log10(heightInches) - 78.387;
   }
+
+  if (!Number.isFinite(bodyFat)) return null;
   return Math.round(bodyFat * 10) / 10;
 }
 
@@ -213,23 +220,23 @@ export type BodyFatCategory = {
   range: [number, number];
 };
 
-// Categories differ by sex (ACE body fat % norms)
+// ACE-style body fat % bands by sex (informative labels; not a diagnosis)
 export function getBodyFatCategories(sex: Sex): BodyFatCategory[] {
   if (sex === "male") {
     return [
       { label: "Essential fat", range: [0, 6] },
-      { label: "Athletic", range: [6, 14] },
-      { label: "Fit", range: [14, 18] },
+      { label: "Athletes", range: [6, 14] },
+      { label: "Fitness", range: [14, 18] },
       { label: "Average", range: [18, 25] },
-      { label: "Above average", range: [25, Infinity] },
+      { label: "Higher body fat", range: [25, Infinity] },
     ];
   }
   return [
     { label: "Essential fat", range: [0, 14] },
-    { label: "Athletic", range: [14, 21] },
-    { label: "Fit", range: [21, 25] },
+    { label: "Athletes", range: [14, 21] },
+    { label: "Fitness", range: [21, 25] },
     { label: "Average", range: [25, 32] },
-    { label: "Above average", range: [32, Infinity] },
+    { label: "Higher body fat", range: [32, Infinity] },
   ];
 }
 

@@ -50,6 +50,11 @@ export const CALC = {
     title: "Body Fat % Calculator",
     description: "Estimate body fat with the US Navy circumference method — no calipers.",
   },
+  navyBodyFat: {
+    href: "/navy-body-fat-calculator",
+    title: "Navy Body Fat Calculator",
+    description: "Run the US Navy tape-measure body fat formulas with measurement tips built in.",
+  },
   bmr: {
     href: "/bmr-calculator",
     title: "BMR Calculator",
@@ -520,7 +525,7 @@ POSTS.push({
   datePublished: TODAY,
   dateReviewed: TODAY,
   ogImage: "/infographics/navy-body-fat-method-explained",
-  relatedCalculators: [CALC.bodyFat, CALC.bmi, CALC.weightRange],
+  relatedCalculators: [CALC.navyBodyFat, CALC.bmi, CALC.weightRange],
   pinterestFacts: [
     { headline: "Tape Measure, Not Calipers", detail: "The Navy method uses height and circumferences to estimate body fat percent." },
     { headline: "Sex-Specific Formulas", detail: "Men and women use different sites because fat distribution patterns differ." },
@@ -546,7 +551,9 @@ POSTS.push({
         <tr><td>Hips</td><td>Not used</td><td>At the widest point</td></tr>
       </tbody>
     </table>
-    <p>Men need height, neck, and waist; women add the hip measurement, because the female formula treats fat distribution differently. Feed those numbers straight into the <a href="/body-fat-calculator">body fat calculator</a> and it runs the Navy equations for you.</p>
+    <p>Men need height, neck, and waist; women add the hip measurement, because the female formula treats fat distribution differently. Want to run your own numbers while you read? Use the Navy body fat calculator below. Keep the tape snug (not digging), enter inches, and treat the result as a useful estimate rather than a diagnosis.</p>
+    {{NAVY_BODY_FAT_CALCULATOR}}
+    <p>You can also open the standalone <a href="/navy-body-fat-calculator">Navy body fat calculator</a> anytime, or pair it with the <a href="/bmi-calculator">BMI calculator</a> when you want weight-for-height context beside composition.</p>
 
     <h2 id="accuracy">How accurate is it, really?</h2>
     <p>Against DEXA — the clinical reference standard — the Navy method usually lands within about 3 to 4 percentage points for people in the normal-to-overweight range. That is not tight enough to settle whether you are 12% or 14% body fat.</p>
