@@ -1,3 +1,4 @@
+// src/app/navy-body-fat-calculator/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
 import NavyBodyFatCalculatorTool from "@/components/tools/NavyBodyFatCalculatorTool";
@@ -158,7 +159,7 @@ export default function NavyBodyFatCalculatorPage() {
       <h1 className="text-3xl font-semibold tracking-tight text-ink mb-3">
         Navy Body Fat Calculator
       </h1>
-      <p className="text-sage mb-8 max-w-xl">
+      <p className="text-sage mb-8 max-w-xl tracking-wide">
         Estimate body fat percentage with the US Navy circumference method.
         You only need a tape measure, height, and a few minutes. I walk through
         the method in plain English in{" "}
@@ -181,6 +182,105 @@ export default function NavyBodyFatCalculatorPage() {
       <NavyBodyFatCalculatorTool />
 
       <AffiliateSlot placement="bodyfat-mid" />
+
+      <section className="mt-16 flex flex-col gap-10 tracking-wide">
+        <div>
+          <h2 className="font-display text-2xl md:text-3xl font-medium text-ink-900 tracking-display mb-4">
+            How to Use This Tool
+          </h2>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            Choose male or female first so the correct fields appear. Enter
+            height in feet and inches, then use the info icons beside neck,
+            waist, and hip to confirm landmarks. Men need neck and waist. Women
+            also need hip. Measure with a flexible, non-stretch tape, standing
+            tall, breathing normally. Do not flex the neck or suck in the belly.
+          </p>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            Morning measurements are usually steadiest. Take each circumference
+            twice and average if the first two disagree. Enter positive numbers
+            only. If the tool shows a validation message, it is protecting the
+            math: the Navy formulas require waist to exceed neck for men, and
+            waist plus hip to exceed neck for women. Fix the tape reading before
+            you assume the calculator is wrong.
+          </p>
+          <p className="font-body text-base text-ink-700 leading-relaxed">
+            Read the percentage and category as an estimate with non-shaming
+            labels. Log the date, your circumferences, and the result. Repeat
+            monthly under the same conditions. Consistency is how this method
+            earns its keep between clinic visits.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="font-display text-2xl md:text-3xl font-medium text-ink-900 tracking-display mb-4">
+            The Science Behind the Numbers
+          </h2>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            This page runs the classic US Navy circumference body fat equations
+            in inches with base-10 logarithms. For men, the formula uses the
+            difference between waist and neck, scaled by height. For women, it
+            uses waist plus hip minus neck, again scaled by height. Those
+            structures reflect average sex differences in where fat is stored
+            and how girth relates to estimated fat percentage.
+          </p>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            The Navy method became a clinical and operational baseline because
+            it is fast, inexpensive, and hard to game compared with
+            weight-only screens. It does not measure fat cells directly. It
+            infers composition from geometry. That is why landmark discipline
+            matters, and why DEXA or hydrostatic weighing remain more precise
+            when research-grade accuracy is required.
+          </p>
+          <p className="font-body text-base text-ink-700 leading-relaxed">
+            In my practice I use circumference estimates to help patients see
+            fat loss when the scale is noisy, and to challenge BMI readings that
+            ignore muscle. I also explain limits honestly: unusual body
+            proportions, extreme leanness, and higher degrees of obesity can
+            widen error. Health decisions should still weigh waist trends,
+            fitness, symptoms, and labs beside any percentage this tool returns.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="font-display text-2xl md:text-3xl font-medium text-ink-900 tracking-display mb-4">
+            Frequently Asked Questions
+          </h2>
+          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
+            Why do the male and female Navy formulas differ?
+          </h3>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            Average fat distribution differs by sex. The female equation
+            includes hip circumference to account for more gluteal and hip
+            storage. Using the wrong sex equation or skipping hips for women
+            produces a less meaningful estimate.
+          </p>
+          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
+            Can I use centimeters instead of inches?
+          </h3>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            This tool is built for inches to match the equation constants shown
+            on the page. If you measure in centimeters, convert to inches before
+            entering values, or your result will not match the intended formula.
+          </p>
+          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
+            How should I interpret the category label?
+          </h3>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            Categories are population-style guides by sex. They help you locate
+            a result on a familiar map. They are not diagnoses and they are not
+            comments on character. Pair the label with how you feel, train, and
+            trend over time.
+          </p>
+          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
+            Does a Navy body fat result replace medical care?
+          </h3>
+          <p className="font-body text-base text-ink-700 leading-relaxed">
+            No. It is a general educational estimate. Rapid weight change,
+            suspected hormone issues, or disordered eating need personalized
+            clinical care beyond any tape-measure formula.
+          </p>
+        </div>
+      </section>
 
       <section>
         <p className="eyebrow mt-16 mb-6">About this calculator</p>

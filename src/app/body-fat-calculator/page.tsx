@@ -35,7 +35,7 @@ export default function BodyFatCalculatorPage() {
       <h1 className="text-3xl font-semibold tracking-tight text-ink mb-3">
         Body Fat Percentage Calculator
       </h1>
-      <p className="text-sage mb-8 max-w-xl">
+      <p className="text-sage mb-8 max-w-xl tracking-wide">
         A more direct read on body composition than BMI — estimated from
         circumference measurements you can take with a tape measure.
       </p>
@@ -43,6 +43,113 @@ export default function BodyFatCalculatorPage() {
       <BodyFatCalculatorTool />
 
       <AffiliateSlot placement="bodyfat-mid" />
+
+      <section className="mt-16 flex flex-col gap-10 tracking-wide">
+        <div>
+          <h2 className="font-display text-2xl md:text-3xl font-medium text-ink-900 tracking-display mb-4">
+            How to Use This Tool
+          </h2>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            Select sex first, because the equation sites differ. Enter height,
+            then measure neck and waist with a flexible tape. Women also enter
+            hip circumference. Take measurements in the morning when you can,
+            before a large meal, standing relaxed. Keep the tape snug against
+            skin without compressing soft tissue.
+          </p>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            For neck, measure just below the larynx. For waist on this tool,
+            use the navel landmark consistently. For hips, measure the widest
+            part of the buttocks with the tape level. Enter inches. If a
+            reading seems off, measure twice and average. Small tape errors
+            create noticeable percentage swings because the formulas use
+            logarithms of circumference differences.
+          </p>
+          <p className="font-body text-base text-ink-700 leading-relaxed">
+            Compare the estimate with how clothes fit and how your waist
+            changes over months. Body fat percentage is most useful as a trend
+            tool. Recheck every few weeks under the same conditions rather than
+            chasing daily perfection.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="font-display text-2xl md:text-3xl font-medium text-ink-900 tracking-display mb-4">
+            The Science Behind the Numbers
+          </h2>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            This calculator estimates body fat with the US Navy circumference
+            method. The approach grew from military needs for a field-ready
+            composition screen that did not require calipers, underwater
+            weighing, or imaging. Circumferences at sites where fat and lean
+            distribution differ are combined with height in sex-specific
+            equations using base-10 logarithms.
+          </p>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            Men typically need height, neck, and waist. Women add hip
+            circumference because average female fat distribution includes more
+            gluteal and hip storage. The resulting percentage is an inference,
+            not a direct fat mass measurement. Against reference methods such as
+            DEXA, Navy estimates are often useful within a few percentage
+            points for many adults in typical ranges, with more error at the
+            extremes of leanness or obesity.
+          </p>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            Clinically I value the method for accessibility and repeatability.
+            Patients can track composition at home between visits. I still
+            counsel that waist trends, strength, and metabolic labs may matter
+            more for health decisions than any single body fat percentage. Use
+            this tool to add composition context beside BMI, not to replace a
+            medical evaluation.
+          </p>
+          <p className="font-body text-base text-ink-700 leading-relaxed">
+            If your result and your lived experience disagree, check landmarks
+            first, then consider a second method. Composition tools should
+            reduce confusion, not create a new source of shame or false
+            certainty.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="font-display text-2xl md:text-3xl font-medium text-ink-900 tracking-display mb-4">
+            Frequently Asked Questions
+          </h2>
+          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
+            Why is my body fat estimate different from a smart scale?
+          </h3>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            Bioelectrical impedance scales are sensitive to hydration, recent
+            food, and exercise. Circumference methods have different error
+            sources. Neither is DEXA. Pick one home method and repeat it the
+            same way so the trend is trustworthy.
+          </p>
+          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
+            What is a healthy body fat percentage?
+          </h3>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            Healthy bands differ by sex and shift with age and sport. Women
+            generally carry more essential fat than men. Essential fat is a
+            biological minimum, not a goal. Higher categories are descriptive
+            population labels, not judgments about worth.
+          </p>
+          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
+            Can athletes trust this more than BMI?
+          </h3>
+          <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
+            Often yes for composition questions, because BMI cannot separate
+            muscle from fat. Circumference estimates still misread unusual
+            proportions, so elite athletes may still need more precise testing
+            when decisions are high stakes.
+          </p>
+          <h3 className="font-body text-lg font-semibold text-ink-900 tracking-wide mt-2 mb-2">
+            Is this a diagnosis of obesity or fitness?
+          </h3>
+          <p className="font-body text-base text-ink-700 leading-relaxed">
+            No. It is a general estimate for education and trend tracking. Body
+            composition concerns, rapid changes, or disordered eating patterns
+            deserve care from a clinician who knows your history.
+          </p>
+        </div>
+      </section>
 
       <section>
         <p className="eyebrow mt-16 mb-6">About this calculator</p>
