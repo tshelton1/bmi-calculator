@@ -25,15 +25,11 @@ export const CALCULATOR_OG_IMAGES: Record<
   },
   "body-fat-calculator": {
     // path: "/images/og/body-fat-calculator.jpg",
-    alt: "Body Fat Calculator — Living Healthier",
+    alt: "Navy Body Fat % Calculator — Living Healthier",
   },
   "macro-calculator": {
     // path: "/images/og/macro-calculator.jpg",
     alt: "Macro Calculator — Living Healthier",
-  },
-  "navy-body-fat-calculator": {
-    // path: "/images/og/navy-body-fat-calculator.jpg",
-    alt: "Navy Body Fat Calculator — Living Healthier",
   },
 };
 

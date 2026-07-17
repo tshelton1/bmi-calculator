@@ -17,8 +17,7 @@ const CALCULATOR_ITEMS: NavItem[] = [
   { href: "/bmr-calculator", label: "BMR Calculator" },
   { href: "/calorie-calculator", label: "Calorie Needs" },
   { href: "/macro-calculator", label: "Macro Calculator" },
-  { href: "/body-fat-calculator", label: "Body Fat %" },
-  { href: "/navy-body-fat-calculator", label: "Navy Body Fat" },
+  { href: "/body-fat-calculator", label: "Navy Body Fat %" },
 ];
 
 const RESOURCE_ITEMS: NavItem[] = [

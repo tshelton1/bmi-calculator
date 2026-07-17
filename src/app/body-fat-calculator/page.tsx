@@ -9,23 +9,26 @@ import {
   calculatorTwitter,
 } from "@/lib/og-images";
 
+const TITLE = "Navy Body Fat % Calculator | Living Healthier";
+const DESCRIPTION =
+  "Estimate your Navy body fat % using the US Navy circumference method. No calipers required. Free and instant.";
+
 export const metadata: Metadata = {
   title: {
-    absolute: "Body Fat Calculator — US Navy Method | Living Healthier",
+    absolute: TITLE,
   },
-  description:
-    "Estimate your body fat percentage using the US Navy circumference method. No calipers required. Free and instant.",
+  description: DESCRIPTION,
   alternates: { canonical: `${SITE_URL}/body-fat-calculator` },
   openGraph: calculatorOpenGraph(
     "body-fat-calculator",
-    "Body Fat Calculator — US Navy Method | Living Healthier",
-    "Estimate your body fat percentage using the US Navy circumference method. No calipers required. Free and instant.",
+    TITLE,
+    DESCRIPTION,
     `${SITE_URL}/body-fat-calculator`
   ),
   twitter: calculatorTwitter(
     "body-fat-calculator",
-    "Body Fat Calculator — US Navy Method | Living Healthier",
-    "Estimate your body fat percentage using the US Navy circumference method. No calipers required."
+    TITLE,
+    "Estimate your Navy body fat % using the US Navy circumference method."
   ),
 };
 
@@ -33,7 +36,7 @@ export default function BodyFatCalculatorPage() {
   return (
     <main className="max-w-3xl mx-auto px-5 py-10">
       <h1 className="text-3xl font-semibold tracking-tight text-ink mb-3">
-        Body Fat Percentage Calculator
+        Navy Body Fat % Calculator
       </h1>
       <p className="text-sage mb-8 max-w-xl tracking-wide">
         A more direct read on body composition than BMI — estimated from
@@ -66,7 +69,7 @@ export default function BodyFatCalculatorPage() {
           </p>
           <p className="font-body text-base text-ink-700 leading-relaxed">
             Compare the estimate with how clothes fit and how your waist
-            changes over months. Body fat percentage is most useful as a trend
+            changes over months. Navy body fat % is most useful as a trend
             tool. Recheck every few weeks under the same conditions rather than
             chasing daily perfection.
           </p>
@@ -77,12 +80,12 @@ export default function BodyFatCalculatorPage() {
             The Science Behind the Numbers
           </h2>
           <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
-            This calculator estimates body fat with the US Navy circumference
-            method. The approach grew from military needs for a field-ready
-            composition screen that did not require calipers, underwater
-            weighing, or imaging. Circumferences at sites where fat and lean
-            distribution differ are combined with height in sex-specific
-            equations using base-10 logarithms.
+            This calculator estimates Navy body fat % with the US Navy
+            circumference method. The approach grew from military needs for a
+            field-ready composition screen that did not require calipers,
+            underwater weighing, or imaging. Circumferences at sites where fat
+            and lean distribution differ are combined with height in
+            sex-specific equations using base-10 logarithms.
           </p>
           <p className="font-body text-base text-ink-700 leading-relaxed mb-4">
             Men typically need height, neck, and waist. Women add hip
@@ -97,9 +100,9 @@ export default function BodyFatCalculatorPage() {
             Clinically I value the method for accessibility and repeatability.
             Patients can track composition at home between visits. I still
             counsel that waist trends, strength, and metabolic labs may matter
-            more for health decisions than any single body fat percentage. Use
-            this tool to add composition context beside BMI, not to replace a
-            medical evaluation.
+            more for health decisions than any single Navy body fat % reading.
+            Use this tool to add composition context beside BMI, not to replace
+            a medical evaluation.
           </p>
           <p className="font-body text-base text-ink-700 leading-relaxed">
             If your result and your lived experience disagree, check landmarks
@@ -115,49 +118,53 @@ export default function BodyFatCalculatorPage() {
           </h2>
           <Accordion
             items={[
-            {
-              question: "Why is my body fat estimate different from a smart scale?",
-              answer: (
-                <p className="tracking-wide">
-                  Bioelectrical impedance scales are sensitive to hydration, recent food,
-                  and exercise. Circumference methods have different error sources.
-                  Neither is DEXA. Pick one home method and repeat it the same way so the
-                  trend is trustworthy.
-                </p>
-              ),
-            },
-            {
-              question: "What is a healthy body fat percentage?",
-              answer: (
-                <p className="tracking-wide">
-                  Healthy bands differ by sex and shift with age and sport. Women
-                  generally carry more essential fat than men. Essential fat is a
-                  biological minimum, not a goal. Higher categories are descriptive
-                  population labels, not judgments about worth.
-                </p>
-              ),
-            },
-            {
-              question: "Can athletes trust this more than BMI?",
-              answer: (
-                <p className="tracking-wide">
-                  Often yes for composition questions, because BMI cannot separate muscle
-                  from fat. Circumference estimates still misread unusual proportions, so
-                  elite athletes may still need more precise testing when decisions are
-                  high stakes.
-                </p>
-              ),
-            },
-            {
-              question: "Is this a diagnosis of obesity or fitness?",
-              answer: (
-                <p className="tracking-wide">
-                  No. It is a general estimate for education and trend tracking. Body
-                  composition concerns, rapid changes, or disordered eating patterns
-                  deserve care from a clinician who knows your history.
-                </p>
-              ),
-            },
+              {
+                question:
+                  "Why is my body fat estimate different from a smart scale?",
+                answer: (
+                  <p className="tracking-wide">
+                    Bioelectrical impedance scales are sensitive to hydration,
+                    recent food, and exercise. Circumference methods have
+                    different error sources. Neither is DEXA. Pick one home
+                    method and repeat it the same way so the trend is
+                    trustworthy.
+                  </p>
+                ),
+              },
+              {
+                question: "What is a healthy body fat percentage?",
+                answer: (
+                  <p className="tracking-wide">
+                    Healthy bands differ by sex and shift with age and sport.
+                    Women generally carry more essential fat than men.
+                    Essential fat is a biological minimum, not a goal. Higher
+                    categories are descriptive population labels, not judgments
+                    about worth.
+                  </p>
+                ),
+              },
+              {
+                question: "Can athletes trust this more than BMI?",
+                answer: (
+                  <p className="tracking-wide">
+                    Often yes for composition questions, because BMI cannot
+                    separate muscle from fat. Circumference estimates still
+                    misread unusual proportions, so elite athletes may still
+                    need more precise testing when decisions are high stakes.
+                  </p>
+                ),
+              },
+              {
+                question: "Is this a diagnosis of obesity or fitness?",
+                answer: (
+                  <p className="tracking-wide">
+                    No. It is a general estimate for education and trend
+                    tracking. Body composition concerns, rapid changes, or
+                    disordered eating patterns deserve care from a clinician who
+                    knows your history.
+                  </p>
+                ),
+              },
             ]}
           />
         </div>
@@ -199,7 +206,7 @@ export default function BodyFatCalculatorPage() {
                 <p>
                   BMI can&apos;t tell muscle from fat. This can, at least
                   roughly. If your <a href="/bmi-calculator">BMI</a> reads
-                  higher than expected but your body fat percentage here comes
+                  higher than expected but your Navy body fat % here comes
                   back in the &quot;athletic&quot; or &quot;fit&quot; range,
                   that&apos;s a strong sign the BMI number is being skewed by
                   muscle mass rather than excess fat. For a height-based weight

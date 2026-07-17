@@ -157,7 +157,7 @@ export default function Home() {
           {
             href: "/body-fat-calculator",
             eyebrow: "Composition",
-            title: "Body Fat %",
+            title: "Navy Body Fat %",
             desc: "Navy circumference method, no calipers required.",
           },
           {
