@@ -118,7 +118,9 @@ export function getBlogPost(slug: string): BlogPost | undefined {
 }
 
 export function getAllBlogPosts(): BlogPost[] {
-  return POSTS;
+  return [...POSTS].sort((a, b) =>
+    b.datePublished.localeCompare(a.datePublished)
+  );
 }
 
 export const BLOG_POSTS = POSTS;

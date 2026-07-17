@@ -43,7 +43,7 @@ export default function BlogIndexPage() {
         clinical and surgical experience.
       </p>
 
-      <div className="mt-10 border-t border-ivory-300">
+      <div className="mt-12 flex flex-col gap-10 sm:gap-12 md:gap-14">
         {posts.map((post) => (
           <BlogCard key={post.slug} post={post} />
         ))}
